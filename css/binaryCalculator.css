@@ -13,6 +13,12 @@ body {
     border : solid;
     height :48px;
     font-size :20px;
+    border-radius: 20px;
+    padding: 5px 0px 0px 10px;
+}
+
+#btn0, #btn1, #btnClr, #btnSum, #btnSub, #btnMul {
+  margin-right: 6px !important;
 }
 
 #btn0, #btn1 {
@@ -52,11 +58,12 @@ body {
 }
 
 #btns button {
-  width: 25%;
+  width: 187px;
   height: 65px;
   font-size: 18px;
   margin: 0;
   float: left;
+  border-radius: 20px;
 }
 
 .container {
