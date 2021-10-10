@@ -17,10 +17,6 @@ body {
     padding: 5px 0px 0px 10px;
 }
 
-#btn0, #btn1, #btnClr, #btnSum, #btnSub, #btnMul {
-  margin-right: 6px !important;
-}
-
 #btn0, #btn1 {
     background-color :lightgreen;
     color :brown;
@@ -35,13 +31,6 @@ body {
     color: red;
 }
 
-/* button{
-    width :25%;
-    height :36px;
-    font-size :18px;
-    margin : 0px;
-    float :left;
-} */
 
 #btns {
   display: block;
