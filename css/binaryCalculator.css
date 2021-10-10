@@ -17,6 +17,10 @@ body {
     padding: 5px 0px 0px 10px;
 }
 
+#btn0, #btn1, #btnClr, #btnSum, #btnSub, #btnMul {
+  margin-right: 6px !important;
+}
+
 #btn0, #btn1 {
     background-color :lightgreen;
     color :brown;
