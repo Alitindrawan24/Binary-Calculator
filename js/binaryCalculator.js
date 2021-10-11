@@ -1,15 +1,15 @@
-const res = document.getElementById("res");
+const res = document.form.textview.value;
 
 function clc() {
-    res.innerHTML = "";
+    document.form.textview.value = "";
 }
 
 function insert(num) {
-    res.innerHTML += num;
+    document.form.textview.value += num;
 }
 
 function eql() {
-    let result = res.innerHTML;
+    let result = document.form.textview.value;
 
     operator = result.replace(/[0-9]/g, '');
     result = result.split(new RegExp(/[+\-*/]/));
@@ -20,7 +20,7 @@ function eql() {
     num1 = binaryToDecimal(num1);
     num2 = binaryToDecimal(num2);
 
-    switch(operator) {
+    switch (operator) {
         case '+':
             value = num1 + num2;
             break;
@@ -37,12 +37,12 @@ function eql() {
             value = ''
             break;
     }
-    res.innerHTML = decimalToBinary(value);
+    document.form.textview.value = decimalToBinary(value);
 }
 
 function decimalToBinary(num) {
     let binary = [];
-    while(num > 0) {
+    while (num > 0) {
         binary.push(num % 2);
         num = Math.floor(num / 2);
     }
@@ -51,7 +51,7 @@ function decimalToBinary(num) {
 
 function binaryToDecimal(binary) {
     let decimal = 0;
-    for(let i = 0; i < binary.length; i++) {
+    for (let i = 0; i < binary.length; i++) {
         decimal += binary[i] * Math.pow(2, binary.length - i - 1);
     }
     return decimal;
@@ -59,19 +59,19 @@ function binaryToDecimal(binary) {
 
 // register a keystroke listener
 document.addEventListener('keydown', event => {
-  if (event.code === "Numpad0" || event.code === "Digit0") {
-    insert(0);
-  } else if (event.code === "Numpad1" || event.code === "Digit1") {
-    insert(1);
-  } else if (event.code == "NumpadAdd") {
-    insert('+');
-  } else if (event.code == "NumpadSubtract") {
-    insert('-');
-  } else if (event.code == "NumpadDivide") {
-    insert('/');
-  } else if (event.code == "NumpadMultiply") {
-    insert('*');
-  } else if (event.code == "Enter") {
-    eql();
-  }
+    if (event.code === "Numpad0" || event.code === "Digit0") {
+        insert(0);
+    } else if (event.code === "Numpad1" || event.code === "Digit1") {
+        insert(1);
+    } else if (event.code == "NumpadAdd") {
+        insert('+');
+    } else if (event.code == "NumpadSubtract") {
+        insert('-');
+    } else if (event.code == "NumpadDivide") {
+        insert('/');
+    } else if (event.code == "NumpadMultiply") {
+        insert('*');
+    } else if (event.code == "Enter") {
+        eql();
+    }
 });
