@@ -1,7 +1,11 @@
-# Binary-Calculator
-Binary Calculator
-# Simple Binary Calculator using HTML, CSS, and JavaScript
-# Note : Please Create an issue first then make pull request if you have any suggestion or bug report.
+<h1 align='center'>Binary-Calculator</h1>
+
+Simple Binary Calculator using HTML, CSS, and JavaScript  
+### Preview:
+![image](https://user-images.githubusercontent.com/59578892/136780206-0f790fe8-ffd1-462e-9444-940aeda13693.png)
+
+### Note:
+Please Create an issue first then make pull request if you have any suggestion or bug report.
 
 ### How to contribute <br>
 
