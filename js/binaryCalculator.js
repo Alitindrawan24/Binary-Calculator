@@ -63,15 +63,17 @@ document.addEventListener('keydown', event => {
         insert(0);
     } else if (event.code === "Numpad1" || event.code === "Digit1") {
         insert(1);
-    } else if (event.code == "NumpadAdd") {
+    } else if (event.code == "NumpadAdd" || event.key == "+") {
         insert('+');
-    } else if (event.code == "NumpadSubtract") {
+    } else if (event.code == "NumpadSubtract" || event.key == "-") {
         insert('-');
-    } else if (event.code == "NumpadDivide") {
+    } else if (event.code == "NumpadDivide" || event.key == "/") {
         insert('/');
-    } else if (event.code == "NumpadMultiply") {
+    } else if (event.code == "NumpadMultiply" || event.key == "*") {
         insert('*');
-    } else if (event.code == "Enter") {
+    } else if (event.code == "Enter" || event.key == "Enter") {
         eql();
+    } else if (event.code == "KeyC" || event.key == "c" || event.code == "Backspace" || event.key == "Backspace") {
+        clc();
     }
 });
