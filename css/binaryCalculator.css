@@ -60,3 +60,10 @@
   font-style: oblique;
   font-size: large;
 }
+
+.title {
+  font-family: Berlin Sans FB;
+  font-style: oblique;
+  color: silver;
+  text-align: center;
+}
