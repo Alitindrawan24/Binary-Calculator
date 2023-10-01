@@ -8,36 +8,62 @@ function insert(num) {
     document.form.textview.value += num;
 }
 
+function logicalAnd(num1, num2) {
+    return num1 & num2;
+}
+
+function logicalOr(num1, num2) {
+    return num1 | num2;
+}
+
+function logicalXor(num1, num2) {
+    return num1 ^ num2;
+}
+
 function eql() {
     let result = document.form.textview.value;
 
-    operator = result.replace(/[0-9]/g, '');
-    result = result.split(new RegExp(/[+\-*/]/));
+    
+    const numbers = result.split(/[-+*/&|^]/);
 
-    let num1 = result[0];
-    let num2 = result[1];
+    if (numbers.length !== 2) {
+        document.form.textview.value = "Error"; 
+        return;
+    }
 
-    num1 = binaryToDecimal(num1);
-    num2 = binaryToDecimal(num2);
+    const num1 = parseInt(numbers[0], 2);
+    const num2 = parseInt(numbers[1], 2);
+
+    if (isNaN(num1) || isNaN(num2)) {
+        document.form.textview.value = "Error"; 
+        return;
+    }
+
+    const operator = result.match(/[&|^]/)[0]; 
+
+    let resultValue;
 
     switch (operator) {
-        case '+':
-            value = num1 + num2;
+        case '&':
+            resultValue = logicalAnd(num1, num2); 
             break;
-        case '*':
-            value = num1 * num2;
+        case '|':
+            resultValue = logicalOr(num1, num2);
             break;
-        case '/':
-            value = num1 / num2;
-            break;
-        case '-':
-            value = num1 - num2;
+        case '^':
+            resultValue = logicalXor(num1, num2); 
             break;
         default:
-            value = ''
+            resultValue = "Error please Enter correctly"; 
             break;
     }
-    document.form.textview.value = decimalToBinary(value);
+
+
+    if (resultValue === 0) {
+        document.form.textview.value = "0";
+    } else {
+        document.form.textview.value = decimalToBinary(resultValue);
+    }
 }
 
 function decimalToBinary(num) {
@@ -71,8 +97,6 @@ document.addEventListener('keydown', event => {
         insert('/');
     } else if (event.code == "NumpadMultiply" || event.key == "*") {
         insert('*');
-    } else if (event.code == "Enter" || event.key == "Enter") {
-        eql();
     } else if (event.code == "KeyC" || event.key == "c" || event.code == "Backspace" || event.key == "Backspace") {
         clc();
     }
