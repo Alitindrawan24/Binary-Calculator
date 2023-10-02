@@ -77,3 +77,23 @@ document.addEventListener('keydown', event => {
         clc();
     }
 });
+
+
+// ... Your existing code ...
+
+const toggleThemeButton = document.getElementById('toggle-theme-button');
+const theme1Link = document.getElementById('theme1');
+const theme2Link = document.getElementById('theme2');
+let isTheme1Active = true;
+
+toggleThemeButton.addEventListener('click', () => {
+  if (isTheme1Active) {
+    theme1Link.disabled = true;
+    theme2Link.disabled = false;
+  } else {
+    theme1Link.disabled = false;
+    theme2Link.disabled = true;
+  }
+  isTheme1Active = !isTheme1Active;
+});
+
