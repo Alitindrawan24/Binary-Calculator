@@ -78,8 +78,6 @@ document.addEventListener('keydown', event => {
     }
 });
 
-// ... Your existing code ...
-
 const toggleThemeButton = document.getElementById('toggle-theme-button');
 const theme1Link = document.getElementById('theme1');
 const theme2Link = document.getElementById('theme2');
