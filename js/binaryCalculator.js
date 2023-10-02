@@ -13,12 +13,10 @@ function eql() {
 
   const parts = result
     .split(/([\+\-\*\/&|^><])/)
-    // I have added & | ^ , right shift and left shift operators splitting part too
-    // > and < represent the right and left shift operators respectively
     .filter((part) => part.trim() !== "");
 
   if (parts.length !== 3) {
-    res.value = "Error";
+    res.value = "Invalid Input";
     return;
   }
 
@@ -27,7 +25,7 @@ function eql() {
   const num2 = parseInt(parts[2], 2);
 
   if (isNaN(num1) || isNaN(num2)) {
-    res.value = "Error";
+    res.value = "Invalid Input";
     return;
   }
 
@@ -45,7 +43,7 @@ function eql() {
       break;
     case "/":
       if (num2 === 0) {
-        res.value = "Error";
+        res.value = "Undefined";
         return;
       }
       resultValue = num1 / num2;
@@ -65,6 +63,7 @@ function eql() {
 }
 
 function decimalToBinary(num) {
+  if(num==0){return 0;}
   let binary = [];
   while (num > 0) {
     binary.push(num % 2);
@@ -72,3 +71,6 @@ function decimalToBinary(num) {
   }
   return binary.reverse().join("");
 }
+
+
+
