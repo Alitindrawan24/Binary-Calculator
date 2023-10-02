@@ -5,10 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Binary Calculator</title>
-  <link rel="stylesheet" href="css/binaryCalculator.css">
+  
+  <link rel="stylesheet" href="css/binaryCalculator.css" id="theme1">
+  <link rel="stylesheet" href="css/darktheme.css" id="theme2" disabled>
 </head>
 <body>
   <div class="bg"></div>
+  <div class="theme-toggle">
+    <button id="toggle-theme-button" type="button"><div class="thh">Change Theme</div></button>
+  </div>
   <div class="main">
     <h1 class="title">Binary Calculator</h1>
     <form name="form">
@@ -18,7 +23,8 @@
       <tr>
         <td><input class="button" type="button" value="0" onclick="insert(0)"></td>
         <td><input class="button" type="button" value="1" onclick="insert(1)"></td>
-        <td><input class="button" type="button" value="C" onclick="clc()"></td>
+        <td><input class="button" type="button" value="⌫" 
+          onclick="backspace()"></td>
         <td><input class="button" type="button" value="=" onclick="eql()"></td>
       </tr>
       <tr>
@@ -35,7 +41,11 @@
       </tr>
       <tr>
         <td><input class="button" type="button" value="<<" onclick="insert('<')"></td>
+<<<<<<< HEAD
 
+=======
+        <td><input class="button" type="button" value="C" onclick="clc()"></td>
+>>>>>>> upstream/master
       </tr>
     </table>       
   </div>
