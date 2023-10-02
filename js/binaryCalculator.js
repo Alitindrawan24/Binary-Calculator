@@ -1,43 +1,65 @@
-const res = document.form.textview.value;
+const res = document.form.textview;
 
 function clc() {
-    document.form.textview.value = "";
+  res.value = "";
 }
 
 function insert(num) {
-    document.form.textview.value += num;
+  res.value += num;
 }
 
 function eql() {
-    let result = document.form.textview.value;
+  let result = res.value;
 
-    operator = result.replace(/[0-9]/g, '');
-    result = result.split(new RegExp(/[+\-*/]/));
+  const parts = result
+    .split(/([\+\-\*\/&|^><])/)
+    .filter((part) => part.trim() !== "");
 
-    let num1 = result[0];
-    let num2 = result[1];
+  if (parts.length !== 3) {
+    res.value = "Invalid Input";
+    return;
+  }
 
-    num1 = binaryToDecimal(num1);
-    num2 = binaryToDecimal(num2);
+  const num1 = parseInt(parts[0], 2);
+  const operator = parts[1];
+  const num2 = parseInt(parts[2], 2);
 
-    switch (operator) {
-        case '+':
-            value = num1 + num2;
-            break;
-        case '*':
-            value = num1 * num2;
-            break;
-        case '/':
-            value = num1 / num2;
-            break;
-        case '-':
-            value = num1 - num2;
-            break;
-        default:
-            value = ''
-            break;
-    }
-    document.form.textview.value = decimalToBinary(value);
+  if (isNaN(num1) || isNaN(num2)) {
+    res.value = "Invalid Input";
+    return;
+  }
+
+  let resultValue;
+
+  switch (operator) {
+    case "+":
+      resultValue = num1 + num2;
+      break;
+    case "-":
+      resultValue = num1 - num2;
+      break;
+    case "*":
+      resultValue = num1 * num2;
+      break;
+    case "/":
+      if (num2 === 0) {
+        res.value = "Undefined";
+        return;
+      }
+      resultValue = num1 / num2;
+      break;
+    case ">":
+      resultValue = num1 >> num2;
+      break;
+    case "<":
+      resultValue = num1 << num2;
+      break;
+    default:
+      res.value = "Error";
+      return;
+  }
+
+  res.value = decimalToBinary(resultValue);
 }
 
 function decimalToBinary(num) {
@@ -76,20 +98,4 @@ document.addEventListener('keydown', event => {
     } else if (event.code == "KeyC" || event.key == "c" || event.code == "Backspace" || event.key == "Backspace") {
         clc();
     }
-});
-
-const toggleThemeButton = document.getElementById('toggle-theme-button');
-const theme1Link = document.getElementById('theme1');
-const theme2Link = document.getElementById('theme2');
-let isTheme1Active = true;
-
-toggleThemeButton.addEventListener('click', () => {
-if (isTheme1Active) {
-    theme1Link.disabled = true;
-    theme2Link.disabled = false;
-} else {
-    theme1Link.disabled = false;
-    theme2Link.disabled = true;
-}
-isTheme1Active = !isTheme1Active;
 });
