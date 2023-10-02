@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Courier New", monospace;
+    color: lime;
+    /* Neon green text color */
+}
+
+.bg {
+    background: #000;
+    /* Black background */
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+.main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.button {
+    width: 75px;
+    height: 75px;
+    font-size: 25px;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 2px solid lime;
+    /* Lime-colored border */
+    color: lime;
+    /* Neon green text color */
+    background-color: #000;
+    /* Black background for buttons */
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+        0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    background: #00f;
+    /* Neon blue background on hover */
+}
+
+.textview {
+    width: 305px;
+    height: 50px;
+    margin: 5px;
+    font-size: 25px;
+    padding: 5px;
+    border: 2px solid lime;
+    /* Lime-colored border */
+    border-radius: 15px;
+    background-color: #000;
+    /* Black background for input field */
+    color: lime;
+    /* Neon green text color */
+}
+
+.name {
+    padding: 20px;
+    bottom: 0;
+    right: 0;
+    text-align: right;
+    position: absolute;
+    color: lime;
+    /* Neon green text color */
+    font-family: "Courier New", monospace;
+    font-style: oblique;
+    font-size: large;
+}
+
+.title {
+    font-family: Berlin Sans FB;
+    font-style: oblique;
+    color: lime;
+    /* Neon green text color */
+    text-align: center;
+}
+
+.thh{
+    font-family: Berlin Sans FB;
+    font-style: oblique;
+    color: #e91e63;
+    background-color: #0074d9;
+    /* Neon green text color */
+    text-align: center;
+    border: 5;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    background-color: #0074d9;
+   
+    color: #e91e63;
+
+    border: none;
+    
+  
+    cursor: pointer;
+    font-size: 14px;
+   
+    font-weight: bold;
+    
+    text-transform: uppercase;
+    
+    text-align: center;
+    
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    
+}
+
+
+
+@keyframes changeBackground {
+    0% {
+        background: #000;
+    }
+
+    25% {
+        background: #111;
+    }
+
+    50% {
+        background: #000;
+    }
+
+    75% {
+        background: #111;
+    }
+
+    100% {
+        background: #000;
+    }
+}
+
+.bg {
+    animation: changeBackground 10s linear infinite;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
