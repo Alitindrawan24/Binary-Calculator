@@ -67,3 +67,78 @@
   color: silver;
   text-align: center;
 }
+
+.thh {
+  font-family: Berlin Sans FB;
+  font-style: oblique;
+  color: lime;
+  background-color: black;
+  /* Neon green text color */
+  text-align: center;
+  border: none;
+  
+  padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  background-color: #000000;
+  /* Use a standard button color */
+  color: #00ff22;
+  /* Text color */
+  border: none;
+ 
+  /* Add padding for a standard button size */
+  /* border-radius: 5px; */
+  cursor: pointer;
+  font-size: 14px;
+  /* Adjust font size as needed */
+  font-weight: bold;
+  /* Make the text bold */
+  text-transform: uppercase;
+  /* Uppercase text for a standard button */
+  text-align: center;
+  /* Center-align the text */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Add a subtle shadow */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Add smooth hover effect */
+
+  border-radius: 5px;
+}
+
+
+@keyframes changeBackground {
+  0% {
+    background: #e91e63;
+  }
+
+  25% {
+    background: #3151b5;
+  }
+
+  50% {
+    background: #e91e63;
+  }
+
+  75% {
+    background: #3151b5;
+  }
+
+  100% {
+    background: #e91e63;
+  }
+}
+
+.bg {
+  animation: changeBackground 10s linear infinite;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}
