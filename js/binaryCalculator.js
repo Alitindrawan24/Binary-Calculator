@@ -1,5 +1,9 @@
 const res = document.form.textview;
 
+function backspace() {
+  res.value = res.value.substring(0, res.value.length - 1);
+}
+
 function clc() {
   res.value = "";
 }
