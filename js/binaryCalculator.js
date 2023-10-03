@@ -50,7 +50,8 @@ function eql() {
         res.value = "Undefined";
         return;
       }
-      resultValue = num1 / num2;
+      var div = num1 / num2;
+      resultValue = div.toString(2);
       break;
     case ">":
       resultValue = num1 >> num2;
