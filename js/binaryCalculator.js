@@ -1,5 +1,9 @@
 const res = document.form.textview;
 
+let memory = 0; // Initialize memory to 0
+let isMemorySet = false; // Flag to check if memory is set
+
+
 function backspace() {
    if (res.value === "Invalid Input" || res.value === "Error" || res.value === "Undefined") {
     res.value = "";
@@ -113,6 +117,32 @@ function binaryToDecimal(binary) {
     return decimal;
 }
 
+function addToMemory() {
+  if (!isNaN(parseFloat(res.value))) {
+    memory += parseFloat(res.value);
+    isMemorySet = true;
+  }
+}
+
+function subtractFromMemory() {
+  if (!isNaN(parseFloat(res.value))) {
+    memory -= parseFloat(res.value);
+    isMemorySet = true;
+  }
+}
+
+function recallMemory() {
+  if (isMemorySet) {
+    res.value = memory;
+  }
+}
+
+function clearMemory() {
+  memory = 0;
+  isMemorySet = false;
+}
+
+
 // register a keystroke listener
 document.addEventListener('keydown', event => {
     if (event.code === "Numpad0" || event.code === "Digit0") {
@@ -131,6 +161,15 @@ document.addEventListener('keydown', event => {
         eql();
     } else if (event.code == "KeyC" || event.key == "c" || event.code == "Backspace" || event.key == "Backspace") {
         clc();
+    }
+    else if (event.code === "KeyM" || event.key === "m") {
+      addToMemory();
+    } else if (event.code === "KeyN" || event.key === "n") {
+      subtractFromMemory();
+    } else if (event.code === "KeyR" || event.key === "r") {
+      recallMemory();
+    } else if (event.code === "KeyL" || event.key === "l") {
+      clearMemory();
     }
 });
 
