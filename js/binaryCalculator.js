@@ -1,7 +1,11 @@
 const res = document.form.textview;
 
 function backspace() {
-  res.value = res.value.substring(0, res.value.length - 1);
+   if (res.value === "Invalid Input" || res.value === "Error" || res.value === "Undefined") {
+    res.value = "";
+   } else {
+    res.value = res.value.substring(0, res.value.length - 1);
+   }
 }
 
 function clc() {
