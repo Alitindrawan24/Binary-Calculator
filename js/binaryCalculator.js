@@ -9,10 +9,12 @@ function clc() {
 }
 
 function insert(num) {
-  if(res.value === "Invalid Input" || res.value === "Error" || res.value === "Undefined")
-    res.value = ""
+  if (res.value === "Invalid Input" || res.value === "Error" || res.value === "Undefined") {
+    res.value = "";
+  }
   res.value += num;
 }
+
 
 function eql() {
   let result = res.value;
@@ -23,6 +25,7 @@ function eql() {
 
   if (parts.length !== 3) {
     res.value = "Invalid Input";
+
     return;
   }
 
