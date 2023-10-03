@@ -84,6 +84,20 @@ function decimalToBinary(num) {
     return binary.reverse().join('');
 }
 
+function oneComplement(){
+  const term=res.value;
+  const onesComplement = term.split('').map(bit => bit === '0' ? '1' : '0').join('');
+  res.value=onesComplement;
+ }
+ function twoComplement(){
+  const binary=res.value;
+  const onesComplement = binary.split('').map(bit => (bit === '0' ? '1' : '0')).join('');
+  const decimalValue = parseInt(onesComplement, 2);
+  const twosComplementDecimal = decimalValue + 1;
+  const twosComplementBinary = twosComplementDecimal.toString(2);
+  const paddedTwosComplement = twosComplementBinary.padStart(binary.length, '0');
+  res.value= paddedTwosComplement;
+ }
 function binaryToDecimal(binary) {
     let decimal = 0;
     for (let i = 0; i < binary.length; i++) {
