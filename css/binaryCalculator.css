@@ -76,9 +76,9 @@
   /* Neon green text color */
   text-align: center;
   border: none;
-  
+
   padding: 10px 20px;
-    border-radius: 5px;
+  border-radius: 5px;
 }
 
 .theme-toggle {
@@ -91,7 +91,7 @@
   color: #00ff22;
   /* Text color */
   border: none;
- 
+
   /* Add padding for a standard button size */
   /* border-radius: 5px; */
   cursor: pointer;
@@ -141,4 +141,31 @@
   left: 0px;
   right: 0px;
   bottom: 0px;
+}
+
+/* CURSOR*/
+.cursor {
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  /* Adjust the width of the cursor */
+  background: lime;
+  /* Lime-colored cursor */
+  animation: blink 1s infinite step-start;
+}
+
+.input-container {
+  position: relative;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
