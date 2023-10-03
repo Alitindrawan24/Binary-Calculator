@@ -9,6 +9,8 @@ function clc() {
 }
 
 function insert(num) {
+  if(res.value === "Invalid Input" || res.value === "Error" || res.value === "Undefined")
+    res.value = ""
   res.value += num;
 }
 
@@ -63,12 +65,18 @@ function eql() {
       res.value = "Error";
       return;
   }
-
-  res.value = decimalToBinary(resultValue);
+  if(resultValue<0) {
+    resultValue*=-1;
+    res.value = "-"+decimalToBinary(resultValue);
+  } else {
+    res.value = decimalToBinary(resultValue);
+  }
 }
 
 function decimalToBinary(num) {
     let binary = [];
+    if(num==0)
+      binary.push(0);
     while (num > 0) {
         binary.push(num % 2);
         num = Math.floor(num / 2);
