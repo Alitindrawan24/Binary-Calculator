@@ -22,5 +22,5 @@ Web link - https://alitindrawan24.github.io/Binary-Calculator/
 
 ## Contributors:
 <a href="https://github.com/Alitindrawan24/Binary-Calculator/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Alitindrawan24/Binary-Calculator" />
+  <img src="https://contrib.rocks/image?repo=Alitindrawan24/Binary-Calculator&anon=1" />
 </a>
