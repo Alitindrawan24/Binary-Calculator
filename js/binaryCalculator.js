@@ -157,7 +157,7 @@ document.addEventListener('keydown', event => {
         insert('/');
     } else if (event.code == "NumpadMultiply" || event.key == "*") {
         insert('*');
-    } else if (event.code == "Enter" || event.key == "Enter") {
+    } else if (event.code == "Enter" || event.key == "Enter" || event.key == "=" || event.Code == "Equal") {
         eql();
     } else if (event.code == "KeyC" || event.key == "c" || event.code == "Backspace" || event.key == "Backspace") {
         clc();
