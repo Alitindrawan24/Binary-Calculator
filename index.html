@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Binary Calculator</title>
-  
+
   <link rel="stylesheet" href="css/binaryCalculator.css" id="theme1">
   <link rel="stylesheet" href="css/darktheme.css" id="theme2" disabled>
 </head>
+
 <body>
   <div class="bg"></div>
   <div class="theme-toggle">
-    <button id="toggle-theme-button" type="button"><div class="thh">Change Theme</div></button>
+    <button id="toggle-theme-button" type="button">
+      <div class="thh">Change Theme</div>
+    </button>
   </div>
   <div class="main">
     <h1 class="title">Binary Calculator</h1>
     <form name="form">
-      <input id="res" type="text" disabled class="textview" name="textview">
+      <div class="input-container">
+        <input id="res" type="text" class="textview" name="textview">
+        <!-- <span class="cursor"></span> -->
+      </div>
     </form>
     <table>
       <tr>
@@ -29,8 +36,8 @@
       <tr>
         <td><input class="button" type="button" value="0" onclick="insert(0)"></td>
         <td><input class="button" type="button" value="1" onclick="insert(1)"></td>
-        <td><input class="button" type="button" value="⌫" 
-          onclick="backspace()"></td>
+        <td><input class="button" type="button" value="=" onclick="eql()"></td>
+        <td><input class="button" type="button" value="⌫" onclick="backspace()"></td>
         <td><input id="eql" class="button" type="button" value="=" onclick="eql()"></td>
       </tr>
       <tr>
@@ -48,13 +55,14 @@
       <tr>
         <td><input class="button" type="button" value="2's" onclick="twoComplement()"></td>
       </tr>
-      
 
-    </table>       
+
+    </table>
   </div>
   <div class="name">
     Made with ❤
   </div>
   <script src="js/binaryCalculator.js"></script>
 </body>
+
 </html>

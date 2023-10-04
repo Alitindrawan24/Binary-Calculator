@@ -1,15 +1,21 @@
 const res = document.form.textview;
 
+// Get the input element by its id
+var inputElement = document.getElementById("res");
+
+// Set the focus on the input element
+inputElement.focus();
+
 let memory = 0; // Initialize memory to 0
 let isMemorySet = false; // Flag to check if memory is set
 
 
 function backspace() {
-   if (res.value === "Invalid Input" || res.value === "Error" || res.value === "Undefined") {
+  if (res.value === "Invalid Input" || res.value === "Error" || res.value === "Undefined") {
     res.value = "";
-   } else {
+  } else {
     res.value = res.value.substring(0, res.value.length - 1);
-   }
+  }
 }
 
 function clc() {
@@ -144,34 +150,41 @@ function clearMemory() {
 
 
 // register a keystroke listener
+// register a keystroke listener
 document.addEventListener('keydown', event => {
-    if (event.code === "Numpad0" || event.code === "Digit0") {
-        insert(0);
-    } else if (event.code === "Numpad1" || event.code === "Digit1") {
-        insert(1);
-    } else if (event.code == "NumpadAdd" || event.key == "+") {
-        insert('+');
-    } else if (event.code == "NumpadSubtract" || event.key == "-") {
-        insert('-');
-    } else if (event.code == "NumpadDivide" || event.key == "/") {
-        insert('/');
-    } else if (event.code == "NumpadMultiply" || event.key == "*") {
-        insert('*');
-    } else if (event.code == "Enter" || event.key == "Enter") {
-        eql();
-    } else if (event.code == "KeyC" || event.key == "c" || event.code == "Backspace" || event.key == "Backspace") {
-        clc();
-    }
-    else if (event.code === "KeyM" || event.key === "m") {
-      addToMemory();
-    } else if (event.code === "KeyN" || event.key === "n") {
-      subtractFromMemory();
-    } else if (event.code === "KeyR" || event.key === "r") {
-      recallMemory();
-    } else if (event.code === "KeyL" || event.key === "l") {
-      clearMemory();
-    }
+  // Prevent default behavior for these keys
+  if (event.code === "Numpad0" || event.code === "Digit0" || event.code === "Numpad1" || event.code === "Digit1") {
+    event.preventDefault();
+  }
+
+  if (event.code === "Numpad0" || event.code === "Digit0") {
+    insert(0);
+  } else if (event.code === "Numpad1" || event.code === "Digit1") {
+    insert(1);
+  } else if (event.code == "NumpadAdd" || event.key == "+") {
+    insert('+');
+  } else if (event.code == "NumpadSubtract" || event.key == "-") {
+    insert('-');
+  } else if (event.code == "NumpadDivide" || event.key == "/") {
+    insert('/');
+  } else if (event.code == "NumpadMultiply" || event.key == "*") {
+    insert('*');
+  } else if (event.code == "Enter" || event.key == "Enter") {
+    eql();
+  } else if (event.code == "KeyC" || event.key == "c" || event.code == "Backspace" || event.key == "Backspace") {
+    clc();
+  }
+  else if (event.code === "KeyM" || event.key === "m") {
+    addToMemory();
+  } else if (event.code === "KeyN" || event.key === "n") {
+    subtractFromMemory();
+  } else if (event.code === "KeyR" || event.key === "r") {
+    recallMemory();
+  } else if (event.code === "KeyL" || event.key === "l") {
+    clearMemory();
+  }
 });
+
 
 
 const toggleThemeButton = document.getElementById('toggle-theme-button');
