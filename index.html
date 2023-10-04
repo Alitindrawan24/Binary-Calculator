@@ -2,67 +2,66 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Binary Calculator</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Calculator</title>
 
-  <link rel="stylesheet" href="css/binaryCalculator.css" id="theme1">
-  <link rel="stylesheet" href="css/darktheme.css" id="theme2" disabled>
+    <link rel="stylesheet" href="css/binaryCalculator.css" id="theme1">
+    <link rel="stylesheet" href="css/darktheme.css" id="theme2" disabled>
 </head>
 
 <body>
-  <div class="bg"></div>
-  <div class="theme-toggle">
-    <button id="toggle-theme-button" type="button">
-      <div class="thh">Change Theme</div>
+    <div class="bg"></div>
+    <div class="theme-toggle">
+        <button id="toggle-theme-button" type="button">
+    <div class="thh">Change Theme</div>
     </button>
-  </div>
-  <div class="main">
-    <h1 class="title">Binary Calculator</h1>
-    <form name="form">
-      <div class="input-container">
-        <input id="res" type="text" class="textview" name="textview">
-        <!-- <span class="cursor"></span> -->
-      </div>
-    </form>
-    <table>
-      <tr>
-        <td><input class="button" type="button" value="M+" onclick="addToMemory()"></td>
-        <td><input class="button" type="button" value="M-" onclick="subtractFromMemory()"></td>
-        <td><input class="button" type="button" value="MR" onclick="recallMemory()"></td>
-        <td><input class="button" type="button" value="MC" onclick="clearMemory()"></td>
-      </tr>
-      <tr>
-        <td><input class="button" type="button" value="0" onclick="insert(0)"></td>
-        <td><input class="button" type="button" value="1" onclick="insert(1)"></td>
-        <td><input class="button" type="button" value="=" onclick="eql()"></td>
-        <td><input class="button" type="button" value="⌫" onclick="backspace()"></td>
-        <td><input id="eql" class="button" type="button" value="=" onclick="eql()"></td>
-      </tr>
-      <tr>
-        <td><input class="button" type="button" value="+" onclick="insert('+')"></td>
-        <td><input class="button" type="button" value="-" onclick="insert('-')"></td>
-        <td><input class="button" type="button" value="*" onclick="insert('*')"></td>
-        <td><input class="button" type="button" value="/" onclick="insert('/')"></td>
-      </tr>
-      <tr>
-        <td><input class="button" type="button" value=">>" onclick="insert('>')"></td>
-        <td><input class="button" type="button" value="<<" onclick="insert('<')"></td>
-        <td><input class="button" type="button" value="C" onclick="clc()"></td>
-        <td><input class="button" type="button" value="1's" onclick="oneComplement()"></td>
-      </tr>
-      <tr>
-        <td><input class="button" type="button" value="2's" onclick="twoComplement()"></td>
-      </tr>
+    </div>
+    <div class="main">
+        <h1 class="title">Binary Calculator</h1>
+        <form name="form">
+            <div class="input-container">
+                <input id="res" type="text" class="textview" name="textview">
+                <!-- <span class="cursor"></span> -->
+            </div>
+        </form>
+        <table>
+            <tr>
+                <td><input class="button" type="button" value="M+" onclick="addToMemory()"></td>
+                <td><input class="button" type="button" value="M-" onclick="subtractFromMemory()"></td>
+                <td><input class="button" type="button" value="MR" onclick="recallMemory()"></td>
+                <td><input class="button" type="button" value="MC" onclick="clearMemory()"></td>
+            </tr>
+            <tr>
+                <td><input class="button" type="button" value="0" onclick="insert(0)"></td>
+                <td><input class="button" type="button" value="1" onclick="insert(1)"></td>
+                <td><input class="button" type="button" value="⌫" onclick="backspace()"></td>
+                <td><input id="eql" class="button" type="button" value="=" onclick="eql()"></td>
+            </tr>
+            <tr>
+                <td><input class="button" type="button" value="+" onclick="insert('+')"></td>
+                <td><input class="button" type="button" value="-" onclick="insert('-')"></td>
+                <td><input class="button" type="button" value="*" onclick="insert('*')"></td>
+                <td><input class="button" type="button" value="/" onclick="insert('/')"></td>
+            </tr>
+            <tr>
+                <td><input class="button" type="button" value=">>" onclick="insert('>')"></td>
+                <td><input class="button" type="button" value="<<" onclick="insert('<')"></td>
+                <td><input class="button" type="button" value="C" onclick="clc()"></td>
+                <td><input class="button" type="button" value="1's" onclick="oneComplement()"></td>
+            </tr>
+            <tr>
+                <td><input class="button" type="button" value="2's" onclick="twoComplement()"></td>
+            </tr>
 
 
-    </table>
-  </div>
-  <div class="name">
-    Made with ❤
-  </div>
-  <script src="js/binaryCalculator.js"></script>
+        </table>
+    </div>
+    <div class="name">
+        Made with ❤
+    </div>
+    <script src="js/binaryCalculator.js"></script>
 </body>
 
 </html>
