@@ -76,45 +76,45 @@ function eql() {
       res.value = "Error";
       return;
   }
-  if(resultValue<0) {
-    resultValue*=-1;
-    res.value = "-"+decimalToBinary(resultValue);
+  if (resultValue < 0) {
+    resultValue *= -1;
+    res.value = "-" + decimalToBinary(resultValue);
   } else {
     res.value = decimalToBinary(resultValue);
   }
 }
 
 function decimalToBinary(num) {
-    let binary = [];
-    if(num==0)
-      binary.push(0);
-    while (num > 0) {
-        binary.push(num % 2);
-        num = Math.floor(num / 2);
-    }
-    return binary.reverse().join('');
+  let binary = [];
+  if (num == 0)
+    binary.push(0);
+  while (num > 0) {
+    binary.push(num % 2);
+    num = Math.floor(num / 2);
+  }
+  return binary.reverse().join('');
 }
 
-function oneComplement(){
-  const term=res.value;
+function oneComplement() {
+  const term = res.value;
   const onesComplement = term.split('').map(bit => bit === '0' ? '1' : '0').join('');
-  res.value=onesComplement;
- }
- function twoComplement(){
-  const binary=res.value;
+  res.value = onesComplement;
+}
+function twoComplement() {
+  const binary = res.value;
   const onesComplement = binary.split('').map(bit => (bit === '0' ? '1' : '0')).join('');
   const decimalValue = parseInt(onesComplement, 2);
   const twosComplementDecimal = decimalValue + 1;
   const twosComplementBinary = twosComplementDecimal.toString(2);
   const paddedTwosComplement = twosComplementBinary.padStart(binary.length, '0');
-  res.value= paddedTwosComplement;
- }
+  res.value = paddedTwosComplement;
+}
 function binaryToDecimal(binary) {
-    let decimal = 0;
-    for (let i = 0; i < binary.length; i++) {
-        decimal += binary[i] * Math.pow(2, binary.length - i - 1);
-    }
-    return decimal;
+  let decimal = 0;
+  for (let i = 0; i < binary.length; i++) {
+    decimal += binary[i] * Math.pow(2, binary.length - i - 1);
+  }
+  return decimal;
 }
 
 function addToMemory() {
@@ -188,4 +188,11 @@ toggleThemeButton.addEventListener('click', () => {
     theme2Link.disabled = true;
   }
   isTheme1Active = !isTheme1Active;
+});
+
+res.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("eql").click();
+  }
 });
