@@ -202,3 +202,10 @@ toggleThemeButton.addEventListener('click', () => {
   }
   isTheme1Active = !isTheme1Active;
 });
+
+res.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("eql").click();
+  }
+});
