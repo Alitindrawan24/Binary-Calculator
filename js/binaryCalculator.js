@@ -188,8 +188,8 @@ document.addEventListener("keydown", (event) => {
     } else if (event.code == "NumpadDivide" || event.key == "/") {
         insert("/");
     } else if (event.code == "NumpadMultiply" || event.key == "*") {
-        insert("*");
-    } else if (event.code == "Enter" || event.key == "Enter") {
+        insert('*');
+    } else if (event.code == "Enter" || event.key == "Enter" || event.key == "=" || event.Code == "Equal") {
         eql();
     } else if (
         event.code == "KeyC" ||
