@@ -1,23 +1,12 @@
-const res = document.form.textview;
-
-// Get the input element by its id
-var inputElement = document.getElementById("res");
-
-// Set the focus on the input element
-inputElement.focus();
-
-let memory = 0; // Initialize memory to 0
-let isMemorySet = false; // Flag to check if memory is set
+const res = document.getElementById("res");
+let memory = 0;
+let isMemorySet = false;
 
 function backspace() {
-    if (
-        res.value === "Invalid Input" ||
-        res.value === "Error" ||
-        res.value === "Undefined"
-    ) {
+    if (isError(res.value)) {
         res.value = "";
     } else {
-        res.value = res.value.substring(0, res.value.length - 1);
+        res.value = res.value.slice(0, -1);
     }
 }
 
@@ -26,26 +15,18 @@ function clc() {
 }
 
 function insert(num) {
-    if (
-        res.value === "Invalid Input" ||
-        res.value === "Error" ||
-        res.value === "Undefined"
-    ) {
+    if (isError(res.value)) {
         res.value = "";
     }
     res.value += num;
 }
 
 function eql() {
-    let result = res.value;
-
-    const parts = result
-        .split(/([\+\-\*\/&|^><])/)
-        .filter((part) => part.trim() !== "");
+    const result = res.value;
+    const parts = result.split(/([\+\-\*\/&|^><])/).filter((part) => part.trim() !== "");
 
     if (parts.length !== 3) {
         res.value = "Invalid Input";
-
         return;
     }
 
@@ -164,10 +145,7 @@ function clearMemory() {
     isMemorySet = false;
 }
 
-// register a keystroke listener
-// register a keystroke listener
 document.addEventListener("keydown", (event) => {
-    // Prevent default behavior for these keys
     if (
         event.code === "Numpad0" ||
         event.code === "Digit0" ||
