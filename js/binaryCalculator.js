@@ -231,3 +231,23 @@ res.addEventListener("keypress", function(event) {
         document.getElementById("eql").click();
     }
 });
+
+
+
+function openModal() {
+    let binaryInput = document.getElementById("res").value;
+    let octalResult = binaryToOctal(binaryInput);
+    let message = `Binary number ${binaryInput} in octal is: ${octalResult}`;
+    document.getElementById("modalResult").textContent = message;
+    document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("myModal").style.display = "none";
+}
+
+function binaryToOctal(binaryInput) {
+    let decimalNumber = parseInt(binaryInput, 2);
+    let octalNumber = decimalNumber.toString(8);
+    return octalNumber;
+}
