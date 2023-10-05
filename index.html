@@ -29,30 +29,33 @@
         <table>
             <tr>
                 <td><input class="button" type="button" value="M+" onclick="addToMemory()"></td>
-                <td><input class="button" type="button" value="M-" onclick="subtractFromMemory()"></td>
-                <td><input class="button" type="button" value="MR" onclick="recallMemory()"></td>
-                <td><input class="button" type="button" value="MC" onclick="clearMemory()"></td>
-            </tr>
-            <tr>
-                <td><input class="button" type="button" value="0" onclick="insert(0)"></td>
-                <td><input class="button" type="button" value="1" onclick="insert(1)"></td>
+                <td><input class="button" type="button" value="C" onclick="clc()"></td>
                 <td><input class="button" type="button" value="⌫" onclick="backspace()"></td>
-                <td><input id="eql" class="button" type="button" value="=" onclick="eql()"></td>
-            </tr>
-            <tr>
-                <td><input class="button" type="button" value="+" onclick="insert('+')"></td>
-                <td><input class="button" type="button" value="-" onclick="insert('-')"></td>
-                <td><input class="button" type="button" value="*" onclick="insert('*')"></td>
                 <td><input class="button" type="button" value="/" onclick="insert('/')"></td>
             </tr>
             <tr>
-                <td><input class="button" type="button" value=">>" onclick="insert('>')"></td>
-                <td><input class="button" type="button" value="<<" onclick="insert('<')"></td>
-                <td><input class="button" type="button" value="C" onclick="clc()"></td>
-                <td><input class="button" type="button" value="1's" onclick="oneComplement()"></td>
+                <td><input class="button" type="button" value="M-" onclick="subtractFromMemory()"></td>
+                <td><input class="button" type="button" value="0" onclick="insert(0)"></td>
+                <td><input class="button" type="button" value="1" onclick="insert(1)"></td>
+                <td><input class="button" type="button" value="*" onclick="insert('*')"></td>
+             
             </tr>
             <tr>
+                <td><input class="button" type="button" value="MR" onclick="recallMemory()"></td>
+                <td><input class="button" type="button" value="1's" onclick="oneComplement()"></td>
                 <td><input class="button" type="button" value="2's" onclick="twoComplement()"></td>
+                <td><input class="button" type="button" value="-" onclick="insert('-')"></td>  
+            </tr>
+            <tr>
+                <td><input class="button" type="button" value="MC" onclick="clearMemory()"></td>
+                <td><input class="button" type="button" value=">>" onclick="insert('>')"></td>
+                <td><input class="button" type="button" value="<<" onclick="insert('<')"></td>
+                <td><input class="button" type="button" value="+" onclick="insert('+')"></td>
+               
+            </tr>
+            <tr>
+                <td colspan="3"></td>
+                <td><input id="eql" class="button" type="button" value="=" onclick="eql()"></td>
             </tr>
 
 
