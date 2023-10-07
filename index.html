@@ -54,12 +54,18 @@
                
             </tr>
             <tr>
-                <td colspan="2"></td>
+                <td colspan="1"></td>
                 <td><input class="button" type="button" value="." onclick="decimal()"></td>
+                <td><input class="button" type="button" value="Octal" onclick="openModal()"></td>
                 <td><input id="eql" class="button" type="button" value="=" onclick="eql()"></td>
             </tr>
-
-
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <p id="modalResult"></p>
+                </div>
+            </div>
+            
         </table>
     </div>
     <div class="name">
