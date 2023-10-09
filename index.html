@@ -13,11 +13,6 @@
 
 <body>
     <div class="bg"></div>
-    <div class="theme-toggle">
-        <button id="toggle-theme-button" type="button">
-    <div class="thh">Change Theme</div>
-    </button>
-    </div>
     <div class="main">
         <h1 class="title">Binary Calculator</h1>
         <form name="form">
@@ -54,10 +49,16 @@
 
             </tr>
             <tr>
-                <td colspan="1"></td>
                 <td><input class="button" type="button" value="." onclick="decimal()"></td>
                 <td><input class="button" type="button" value="Octal" onclick="openModal()"></td>
                 <td><input id="eql" class="button" type="button" value="=" onclick="eql()"></td>
+                <td>
+                    <div id="toggle-theme-button" class="theme-container shadow-dark">
+                        <img id="theme-icon "
+                            src="https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg"
+                            alt="ERR">
+                    </div>
+                </td>
             </tr>
             <div id="myModal" class="modal">
                 <div class="modal-content">
@@ -65,7 +66,6 @@
                     <p id="modalResult"></p>
                 </div>
             </div>
-
         </table>
     </div>
     <div class="name">
