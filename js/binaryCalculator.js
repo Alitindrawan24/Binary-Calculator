@@ -301,10 +301,6 @@ function openModalHex() {
   document.getElementById("myModal").style.display = "block";
 }
 
-function closeModal() {
-  document.getElementById("myModal").style.display = "none";
-}
-
 function binaryToHex(binaryInput) {
   let decimalNumber = parseInt(binaryInput, 2);
   let hexNumber = decimalNumber.toString(16);
