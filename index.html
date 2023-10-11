@@ -1,77 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Binary Calculator</title>
 
-    <link rel="stylesheet" href="css/binaryCalculator.css" id="theme1">
-    <link rel="stylesheet" href="css/darktheme.css" id="theme2" disabled>
-</head>
+    <link rel="stylesheet" href="css/binaryCalculator.css" id="theme1" />
+    <link rel="stylesheet" href="css/darktheme.css" id="theme2" disabled />
+  </head>
 
-<body>
+  <body>
     <div class="bg"></div>
     <div class="main">
-        <h1 class="title">Binary Calculator</h1>
-        <form name="form">
-            <div class="input-container">
-                <input id="res" type="text" class="textview" name="textview">
-                <!-- <span class="cursor"></span> -->
+      <h1 class="title">Binary Calculator</h1>
+      <form name="form">
+        <div class="input-container">
+          <input id="res" type="text" class="textview" name="textview" />
+          <!-- <span class="cursor"></span> -->
+        </div>
+      </form>
+      <table>
+        <tr>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="M+"
+              onclick="addToMemory()"
+            />
+          </td>
+          <td>
+            <input class="button" type="button" value="C" onclick="clc()" />
+          </td>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="⌫"
+              onclick="backspace()"
+            />
+          </td>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="/"
+              onclick="insert('/')"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="M-"
+              onclick="subtractFromMemory()"
+            />
+          </td>
+          <td>
+            <input class="button" type="button" value="0" onclick="insert(0)" />
+          </td>
+          <td>
+            <input class="button" type="button" value="1" onclick="insert(1)" />
+          </td>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="*"
+              onclick="insert('*')"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="MR"
+              onclick="recallMemory()"
+            />
+          </td>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="1's"
+              onclick="oneComplement()"
+            />
+          </td>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="2's"
+              onclick="twoComplement()"
+            />
+          </td>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="-"
+              onclick="insert('-')"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="MC"
+              onclick="clearMemory()"
+            />
+          </td>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value=">>"
+              onclick="insert('>')"
+            />
+          </td>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="<<"
+              onclick="insert('<')"
+            />
+          </td>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="+"
+              onclick="insert('+')"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input class="button" type="button" value="." onclick="decimal()" />
+          </td>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="Octal"
+              onclick="openModal()"
+            />
+          </td>
+          <td>
+            <input
+              class="button"
+              type="button"
+              value="Hexa"
+              onclick="openModalHex()"
+            />
+          </td>
+          <td>
+            <input
+              id="eql"
+              class="button"
+              type="button"
+              value="="
+              onclick="eql()"
+            />
+          </td>
+          <td>
+            <div id="toggle-theme-button" class="theme-container shadow-dark">
+              <img
+                id="theme-icon "
+                src="https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg"
+                alt="ERR"
+              />
             </div>
-        </form>
-        <table>
-            <tr>
-                <td><input class="button" type="button" value="M+" onclick="addToMemory()"></td>
-                <td><input class="button" type="button" value="C" onclick="clc()"></td>
-                <td><input class="button" type="button" value="⌫" onclick="backspace()"></td>
-                <td><input class="button" type="button" value="/" onclick="insert('/')"></td>
-            </tr>
-            <tr>
-                <td><input class="button" type="button" value="M-" onclick="subtractFromMemory()"></td>
-                <td><input class="button" type="button" value="0" onclick="insert(0)"></td>
-                <td><input class="button" type="button" value="1" onclick="insert(1)"></td>
-                <td><input class="button" type="button" value="*" onclick="insert('*')"></td>
-
-            </tr>
-            <tr>
-                <td><input class="button" type="button" value="MR" onclick="recallMemory()"></td>
-                <td><input class="button" type="button" value="1's" onclick="oneComplement()"></td>
-                <td><input class="button" type="button" value="2's" onclick="twoComplement()"></td>
-                <td><input class="button" type="button" value="-" onclick="insert('-')"></td>
-            </tr>
-            <tr>
-                <td><input class="button" type="button" value="MC" onclick="clearMemory()"></td>
-                <td><input class="button" type="button" value=">>" onclick="insert('>')"></td>
-                <td><input class="button" type="button" value="<<" onclick="insert('<')"></td>
-                <td><input class="button" type="button" value="+" onclick="insert('+')"></td>
-
-            </tr>
-            <tr>
-                <td><input class="button" type="button" value="." onclick="decimal()"></td>
-                <td><input class="button" type="button" value="Octal" onclick="openModal()"></td>
-                <td><input id="eql" class="button" type="button" value="=" onclick="eql()"></td>
-                <td>
-                    <div id="toggle-theme-button" class="theme-container shadow-dark">
-                        <img id="theme-icon "
-                            src="https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg"
-                            alt="ERR">
-                    </div>
-                </td>
-            </tr>
-            <div id="myModal" class="modal">
-                <div class="modal-content">
-                    <span class="close" onclick="closeModal()">&times;</span>
-                    <p id="modalResult"></p>
-                </div>
-            </div>
-        </table>
+          </td>
+        </tr>
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="modalResult"></p>
+          </div>
+        </div>
+      </table>
     </div>
-    <div class="name">
-        Made with ❤
-    </div>
+    <div class="name">Made with ❤</div>
     <script src="js/binaryCalculator.js"></script>
-</body>
-
+  </body>
 </html>
