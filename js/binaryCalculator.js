@@ -275,10 +275,7 @@ toggleThemeButton.addEventListener("click", () => {
     isTheme1Active = !isTheme1Active;
 });
 
-function openModal() {
-    let binaryInput = document.getElementById("res").value;
-    let octalResult = binaryToOctal(binaryInput);
-    let message = `Binary number ${binaryInput} in octal is: ${octalResult}`;
+function openModal(message){
     document.getElementById("modalResult").textContent = message;
     document.getElementById("myModal").style.display = "block";
 }
@@ -287,8 +284,18 @@ function closeModal() {
     document.getElementById("myModal").style.display = "none";
 }
 
-function binaryToOctal(binaryInput) {
+function binaryToOctal() {
+    let binaryInput = document.getElementById("res").value;
     let decimalNumber = parseInt(binaryInput, 2);
     let octalNumber = decimalNumber.toString(8);
-    return octalNumber;
+    let message = `Binary number ${binaryInput} in octal is: ${octalNumber}`;
+    openModal(message);
+}
+
+function binaryToHexadecimal() {
+    let binaryInput = document.getElementById("res").value;
+    let decimalNumber = parseInt(binaryInput, 2);
+    let hexadecimalNumber = decimalNumber.toString(16);
+    let message = `Binary number ${binaryInput} in hexadecimal is: ${hexadecimalNumber}`;
+    openModal(message);
 }
