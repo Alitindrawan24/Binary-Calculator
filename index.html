@@ -1,52 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Binary Calculator</title>
-  <link rel="stylesheet" href="css/binaryCalculator.css" id="theme1">
-  <link rel="stylesheet" href="css/darktheme.css" id="theme2" disabled>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Calculator</title>
+
+    <link rel="stylesheet" href="css/binaryCalculator.css" id="theme1">
+    <link rel="stylesheet" href="css/darktheme.css" id="theme2" disabled>
 </head>
+
 <body>
-  <div class="bg"></div>
-  <div class="theme-toggle">
-    <!-- <button id="toggle-theme-button" class = "changebtn" type="button" style="width: 100px;">Change Theme</button> -->
-    <button class="btn btn primary" id="toggle-theme-button" style="color:Yellow;">Change Theme</button>
-  </div>
-  <div class="main">
-    <h1 class="title">Binary Calculator</h1>
-    <form name="form">
-      <input id="res" type="text" disabled class="textview" name="textview">
-    </form>
-    <table>
-      <tr>
-        <td><input class="button" type="button" value="0" onclick="insert('0')"></td>
-        <td><input class="button" type="button" value="1" onclick="insert('1')"></td>
-        <td><input class="button" type="button" value="⌫" onclick="backspace()"></td>
-        <td><input class="button" type="button" value="=" onclick="eql()"></td>
-      </tr>
-      <tr>
-        <td><input class="button" type="button" value="+" onclick="insert('+')"></td>
-        <td><input class="button" type="button" value="-" onclick="insert('-')"></td>
-        <td><input class="button" type="button" value="*" onclick="insert('*')"></td>
-        <td><input class="button" type="button" value="/" onclick="insert('/')"></td>
-      </tr>
-      <tr>
-        <td><input class="button" type="button" value="&" onclick="insert('&')"></td>
-        <td><input class="button" type="button" value="|" onclick="insert('|')"></td>
-        <td><input class="button" type="button" value="^" onclick="insert('^')"></td>
-        <td><input class="button" type="button" value=">>" onclick="insert('>')"></td>
-      </tr>
-      <tr>
-        <td><input class="button" type="button" value="<<" onclick="insert('<')"></td>
-        <td><input class="button" type="button" value="C" onclick="clc()"></td>
-      </tr>
-    </table>
-  </div>
-  <div class="name">
-    Made with ❤
-  </div>
-  <script src="js/binaryCalculator.js"></script>
+    <div class="bg"></div>
+    <div class="main">
+        <h1 class="title">Binary Calculator</h1>
+        <form name="form">
+            <div class="input-container">
+                <input id="res" type="text" class="textview" name="textview">
+                <!-- <span class="cursor"></span> -->
+            </div>
+        </form>
+        <table>
+            <tr>
+                <td><input class="button" type="button" value="M+" onclick="addToMemory()"></td>
+                <td><input class="button" type="button" value="C" onclick="clc()"></td>
+                <td><input class="button" type="button" value="⌫" onclick="backspace()"></td>
+                <td><input class="button" type="button" value="/" onclick="insert('/')"></td>
+            </tr>
+            <tr>
+                <td><input class="button" type="button" value="M-" onclick="subtractFromMemory()"></td>
+                <td><input class="button" type="button" value="0" onclick="insert(0)"></td>
+                <td><input class="button" type="button" value="1" onclick="insert(1)"></td>
+                <td><input class="button" type="button" value="*" onclick="insert('*')"></td>
+
+            </tr>
+            <tr>
+                <td><input class="button" type="button" value="MR" onclick="recallMemory()"></td>
+                <td><input class="button" type="button" value="1's" onclick="oneComplement()"></td>
+                <td><input class="button" type="button" value="2's" onclick="twoComplement()"></td>
+                <td><input class="button" type="button" value="-" onclick="insert('-')"></td>
+            </tr>
+            <tr>
+                <td><input class="button" type="button" value="MC" onclick="clearMemory()"></td>
+                <td><input class="button" type="button" value=">>" onclick="insert('>')"></td>
+                <td><input class="button" type="button" value="<<" onclick="insert('<')"></td>
+                <td><input class="button" type="button" value="+" onclick="insert('+')"></td>
+
+            </tr>
+            <tr>
+                <td><input class="button" type="button" value="." onclick="decimal()"></td>
+                <td><input class="button" type="button" value="Octal" onclick="binaryToOctal()"></td>
+                <td><input id="eql" class="button" type="button" value="=" onclick="eql()"></td>
+                <td>
+                    <div id="toggle-theme-button" class="theme-container shadow-dark">
+                        <img id="theme-icon "
+                            src="https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg"
+                            alt="ERR">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><input class="button" type="button" value="Hex" onclick="binaryToHexadecimal()"></td>
+                <td><input class="button" type="button" value="Dec" onclick="binaryToDecimal()"></td>
+            </tr>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <p id="modalResult"></p>
+                </div>
+            </div>
+        </table>
+    </div>
+    <div class="name">
+        Made with ❤
+    </div>
+    <script src="js/binaryCalculator.js"></script>
 </body>
+
 </html>
