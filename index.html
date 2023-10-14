@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Binary Calculator</title>
-  
   <link rel="stylesheet" href="css/binaryCalculator.css" id="theme1">
   <link rel="stylesheet" href="css/darktheme.css" id="theme2" disabled>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
   <div class="bg"></div>
   <div class="theme-toggle">
-    <button id="toggle-theme-button" type="button"><div class="thh">Change Theme</div></button>
+    <!-- <button id="toggle-theme-button" class = "changebtn" type="button" style="width: 100px;">Change Theme</button> -->
+    <button class="btn btn primary" id="toggle-theme-button" style="color:Yellow;">Change Theme</button>
   </div>
   <div class="main">
     <h1 class="title">Binary Calculator</h1>
@@ -21,10 +21,9 @@
     </form>
     <table>
       <tr>
-        <td><input class="button" type="button" value="0" onclick="insert(0)"></td>
-        <td><input class="button" type="button" value="1" onclick="insert(1)"></td>
-        <td><input class="button" type="button" value="⌫" 
-          onclick="backspace()"></td>
+        <td><input class="button" type="button" value="0" onclick="insert('0')"></td>
+        <td><input class="button" type="button" value="1" onclick="insert('1')"></td>
+        <td><input class="button" type="button" value="⌫" onclick="backspace()"></td>
         <td><input class="button" type="button" value="=" onclick="eql()"></td>
       </tr>
       <tr>
@@ -41,13 +40,9 @@
       </tr>
       <tr>
         <td><input class="button" type="button" value="<<" onclick="insert('<')"></td>
-<<<<<<< HEAD
-
-=======
         <td><input class="button" type="button" value="C" onclick="clc()"></td>
->>>>>>> upstream/master
       </tr>
-    </table>       
+    </table>
   </div>
   <div class="name">
     Made with ❤
