@@ -154,3 +154,23 @@
     right: 0px;
     bottom: 0px;
 }
+  .theme-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    height: 75px;
+    border-radius: 15px;
+    border: 2px solid lime;
+    cursor: pointer;
+    color: lime;
+    transition-duration: 0.4s;
+  }
+  
+  .theme-container:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+        0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    background: #00f;
+    border: 2px solid lime;
+    opacity: 0.8;
+  }
