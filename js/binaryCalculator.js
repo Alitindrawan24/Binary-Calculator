@@ -299,3 +299,10 @@ function binaryToHexadecimal() {
     let message = `Binary number ${binaryInput} in hexadecimal is: ${hexadecimalNumber}`;
     openModal(message);
 }
+
+function binaryToDecimal(){
+    let binaryInput = document.getElementById("res").value;
+    let decimalNumber = parseInt(binaryInput, 2);
+    let message = `Binary number ${binaryInput} in decimal is: ${decimalNumber}`;
+    openModal(message);
+}
