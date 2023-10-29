@@ -306,3 +306,42 @@ function binaryToDecimal(){
     let message = `Binary number ${binaryInput} in decimal is: ${decimalNumber}`;
     openModal(message);
 }
+function circularShift(direction) {
+    const inputValue = res.value;
+    if (inputValue === "Invalid Input" || inputValue === "Error" || inputValue === "Undefined") {
+        res.value = "";
+        return;
+    }
+
+    const shiftValue = parseInt(prompt(`Enter the number of positions to ${direction === 'right' ? 'right' : 'left'} shift:`), 10);
+    if (isNaN(shiftValue)) {
+        return;
+    }
+
+    if (direction === 'right') {
+        const shiftedValue = circularShiftRight(inputValue, shiftValue);
+        res.value = shiftedValue;
+    } else if (direction === 'left') {
+        const shiftedValue = circularShiftLeft(inputValue, shiftValue);
+        res.value = shiftedValue;
+    }
+}
+
+function circularShiftRight(input, shift) {
+    // Perform circular shift right
+    const length = input.length;
+    const shifted = input.substr(length - (shift % length)) + input.substr(0, length - (shift % length));
+    return shifted;
+}
+
+function circularShiftLeft(input, shift) {
+    // Perform circular shift left
+    const length = input.length;
+    const shifted = input.substr(shift % length) + input.substr(0, shift % length);
+    return shifted;
+}
+const rorButton = document.querySelector('input[value="ROR"]');
+const rolButton = document.querySelector('input[value="ROL"]');
+
+rorButton.addEventListener("click", () => circularShift('right'));
+rolButton.addEventListener("click", () => circularShift('left'));
