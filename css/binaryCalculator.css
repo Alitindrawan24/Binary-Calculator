@@ -3,20 +3,38 @@
   padding: 0;
 }
 
+html, body {
+  height: 100%; /* Ensures the full height of the page */
+  margin: 0;
+  padding: 0;
+}
+
 .bg {
   background: linear-gradient(to right, #e91e63, #3151b5);
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
+  background-attachment: fixed; /* Background stays fixed while scrolling */
+  background-size: cover; /* Ensures background covers entire area */
+  width: 100%;
+  min-height: 100vh; /* Covers at least the full viewport height */
+  position: fixed; /* Stays fixed on the screen */
+  top: 0;
+  left: 0;
+  z-index: -1; /* Sends background behind the content */
+  animation: changeBackground 10s linear infinite; /* Background color animation */
+}
+
+.title {
+  margin-top: 25%;
 }
 
 .main {
+  display: flex;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .button {
@@ -88,15 +106,6 @@
   100% {
     background: #e91e63;
   }
-}
-
-.bg {
-  animation: changeBackground 10s linear infinite;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
 }
 
 .input-container {

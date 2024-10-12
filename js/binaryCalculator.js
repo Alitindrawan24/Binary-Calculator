@@ -345,3 +345,60 @@ const rolButton = document.querySelector('input[value="ROL"]');
 
 rorButton.addEventListener("click", () => circularShift('right'));
 rolButton.addEventListener("click", () => circularShift('left'));
+
+function bitwiseAND() {
+    const input = document.form.textview.value.split(",");
+    if (input.length === 2) {
+        const result = parseInt(input[0], 2) & parseInt(input[1], 2);
+        document.form.textview.value = result.toString(2);
+    } else {
+        alert("Please enter two binary numbers separated by a comma");
+    }
+}
+
+function bitwiseOR() {
+    const input = document.form.textview.value.split(",");
+    if (input.length === 2) {
+        const result = parseInt(input[0], 2) | parseInt(input[1], 2);
+        document.form.textview.value = result.toString(2);
+    } else {
+        alert("Please enter two binary numbers separated by a comma");
+    }
+}
+
+function bitwiseXOR() {
+    const input = document.form.textview.value.split(",");
+    if (input.length === 2) {
+        const result = parseInt(input[0], 2) ^ parseInt(input[1], 2);
+        document.form.textview.value = result.toString(2);
+    } else {
+        alert("Please enter two binary numbers separated by a comma");
+    }
+}
+
+function binaryToGray() {
+    let binary = document.form.textview.value;
+    let gray = binary[0];
+    for (let i = 1; i < binary.length; i++) {
+        gray += binary[i - 1] ^ binary[i];
+    }
+    document.form.textview.value = gray;
+}
+
+
+function binaryToFloat() {
+    let binary = document.form.textview.value;
+    let float = parseFloat(binary);
+    let sign = binary[0] == '1' ? -1 : 1;
+    let exponent = parseInt(binary.substr(1, 8), 2) - 127;
+    let mantissa = 1 + binary.substr(9).split('').reduce((acc, bit, i) => acc + bit * Math.pow(2, -(i + 1)), 0);
+    let result = sign * mantissa * Math.pow(2, exponent);
+    document.form.textview.value = result.toFixed(6);
+}
+
+function calculateParityBit() {
+    let binary = document.form.textview.value;
+    let ones = binary.split('').filter(bit => bit === '1').length;
+    let parity = ones % 2 === 0 ? 'Even' : 'Odd';
+    alert(`Parity: ${parity}`);
+}
