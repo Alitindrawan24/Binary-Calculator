@@ -164,23 +164,25 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 75px;
-  height: 75px;
+  width: 320px; /* Adjust the width to your preference */
+  height: 70px; /* Adjust the height to match other buttons or as needed */
   font-size: 25px;
-  margin: 2px;
+  margin: 2px 0; /* Added vertical margin */
   cursor: pointer;
   border-radius: 15px;
   color: white;
-  background-color: #607d8b;
+  background-color: #607d8b; /* Adjust the color if necessary */
   transition-duration: 0.4s;
+  border: none; /* Ensure no border unless needed */
 }
 
 .theme-container:hover {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  background: rgb(88, 153, 184);
+  0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  background: rgb(88, 153, 184); /* Darker shade on hover */
   opacity: 0.8;
 }
+
 .heart {
   font-size: 20px;
   position: relative;

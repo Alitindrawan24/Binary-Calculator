@@ -54,12 +54,10 @@ function eql() {
     const num1 =
         parseInt(parts[0].replace(".", ""), 2) /
         Math.pow(2, (parts[0].split(".")[1] || "").length);
-    //this ensures binary fractions are also acknowledged in num1
     const operator = parts[1];
     const num2 =
         parseInt(parts[2].replace(".", ""), 2) /
         Math.pow(2, (parts[2].split(".")[1] || "").length);
-    //this ensures binary fractions are also acknowledged in num2
 
     if (isNaN(num1) || isNaN(num2)) {
         res.value = "Invalid Input";
@@ -95,8 +93,6 @@ function eql() {
             res.value = "Error";
             return;
     }
-
-    res.value = resultValue;
 
     if (resultValue < 0) {
         resultValue *= -1;
@@ -144,12 +140,10 @@ function decimalToBinary(num) {
 
 function reverse(input) {
     let temparray = input.split("");
-    let left,
-        right = 0;
+    let left, right = 0;
     right = temparray.length - 1;
 
     for (left = 0; left < right; left++, right--) {
-        // Swap values of left and right
         let temp = temparray[left];
         temparray[left] = temparray[right];
         temparray[right] = temp;
@@ -345,6 +339,25 @@ const rolButton = document.querySelector('input[value="ROL"]');
 
 rorButton.addEventListener("click", () => circularShift('right'));
 rolButton.addEventListener("click", () => circularShift('left'));
+
+function bitwiseNOT() {
+    let binaryInput = res.value;
+    let binaryInt = parseInt(binaryInput, 2);
+    if (!isNaN(binaryInt)) {
+        // Calculate number of bits in the original input
+        let numBits = binaryInput.length;
+
+        // Apply bitwise NOT and then mask it to the length of the original input
+        let invertedBinaryInt = ~binaryInt;
+        let mask = Math.pow(2, numBits) - 1;
+        let finalBinary = invertedBinaryInt & mask;
+
+        // Convert back to binary string with padding to ensure it has the same length as input
+        res.value = finalBinary.toString(2).padStart(numBits, '0');
+    } else {
+        res.value = "Invalid Input";
+    }
+}
 
 function bitwiseAND() {
     const input = document.form.textview.value.split(",");

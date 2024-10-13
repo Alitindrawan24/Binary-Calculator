@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Binary Calculator</title>
-
     <link rel="stylesheet" href="css/binaryCalculator.css" id="theme1">
     <link rel="stylesheet" href="css/darktheme.css" id="theme2" disabled>
 </head>
-
 <body>
     <div class="bg"></div>
     <div class="main">
@@ -18,7 +15,10 @@
         <form name="form">
             <div class="input-container">
                 <input id="res" type="text" class="textview" name="textview">
-                <!-- <span class="cursor"></span> -->
+            </div>
+            <!-- Placing the theme toggle right below the input field -->
+            <div id="toggle-theme-button" class="theme-container shadow-dark">
+                <img width="50px" src="./images/moon.png" alt="Toggle Theme">
             </div>
         </form>
         <table>
@@ -33,7 +33,6 @@
                 <td><input class="button" type="button" value="0" onclick="insert(0)"></td>
                 <td><input class="button" type="button" value="1" onclick="insert(1)"></td>
                 <td><input class="button" type="button" value="*" onclick="insert('*')"></td>
-
             </tr>
             <tr>
                 <td><input class="button" type="button" value="MR" onclick="recallMemory()"></td>
@@ -46,52 +45,41 @@
                 <td><input class="button" type="button" value=">>" onclick="insert('>')"></td>
                 <td><input class="button" type="button" value="<<" onclick="insert('<')"></td>
                 <td><input class="button" type="button" value="+" onclick="insert('+')"></td>
-                
             </tr>
             <tr>
                 <td><input class="button" type="button" value="." onclick="decimal()"></td>
                 <td><input class="button" type="button" value="Octal" onclick="binaryToOctal()"></td>
                 <td><input id="eql" class="button" type="button" value="=" onclick="eql()"></td>
-                <td>
-                    <div id="toggle-theme-button" class="theme-container shadow-dark">
-                        <img width="50px" id="theme-icon "
-                            src="./images/moon.png"
-                            alt="ERR">
-                    </div>
-                </td>
+                <td><input class="button" type="button" value="NOT" onclick="bitwiseNOT()"></td>
             </tr>
             <tr>
                 <td><input class="button" type="button" value="Hex" onclick="binaryToHexadecimal()"></td>
                 <td><input class="button" type="button" value="Dec" onclick="binaryToDecimal()"></td>
                 <td><input class="button" type="button" value="ROR" onclick="circularShift('right')"></td>
                 <td><input class="button" type="button" value="ROL" onclick="circularShift('left')"></td>
-
             </tr>
-
             <tr>
                 <td><input class="button" type="button" value="AND" onclick="bitwiseAND()"></td>
                 <td><input class="button" type="button" value="OR" onclick="bitwiseOR()"></td>
                 <td><input class="button" type="button" value="XOR" onclick="bitwiseXOR()"></td>
                 <td><input class="button" type="button" value="Gray" onclick="binaryToGray()"></td>
             </tr>
-
             <tr>
                 <td><input class="button" type="button" value="Float" onclick="binaryToFloat()"></td>
                 <td><input class="button" type="button" value="Parity" onclick="calculateParityBit()"></td>
+                <td colspan="2"></td> <!-- Empty cells for alignment -->
             </tr>
-            <div id="myModal" class="modal">
-                <div class="modal-content">
-                    <span class="close" onclick="closeModal()">&times;</span>
-                    <p id="modalResult"></p>
-                </div>
-            </div>
         </table>
     </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="modalResult"></p>
+        </div>
+    </div>
     <div class="name footer">
-        Made with 
-        <div class="heart">❤</div>
+        Made with <div class="heart">❤</div>
     </div>
     <script src="js/binaryCalculator.js"></script>
 </body>
-
 </html>
