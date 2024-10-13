@@ -35,6 +35,7 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top:50px;
 }
 
 .button {
@@ -179,4 +180,65 @@ html, body {
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
   background: rgb(88, 153, 184);
   opacity: 0.8;
+}
+.heart {
+  font-size: 20px;
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  text-align: center;
+  transition: color 1s;
+}
+
+
+.footer:hover .heart {
+  color: #bf360c;
+  -webkit-animation: beat 0.35s infinite alternate;
+  -moz-animation: beat 0.35s infinite alternate;
+  -ms-animation: beat 0.35s infinite alternate;
+  -o-animation: beat 0.35s infinite alternate;
+  animation: beat 0.35s infinite alternate;
+  -webkit-transform-origin: center;
+  -moz-transform-origin: center;
+  -o-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+}
+
+@keyframes beat {
+  to {
+    -webkit-transform: scale(1.4);
+    -moz-transform: scale(1.4);
+    -o-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+}
+
+@-moz-keyframes beat {
+  to {
+    -moz-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+}
+
+@-webkit-keyframes beat {
+  to {
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+}
+
+@-ms-keyframes beat {
+  to {
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+}
+
+@-o-keyframes beat {
+  to {
+    -o-transform: scale(1.4);
+    transform: scale(1.4);
+  }
 }
