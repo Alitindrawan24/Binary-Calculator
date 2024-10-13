@@ -1,32 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap');
+
 * {
     margin: 0;
     padding: 0;
-    font-family: "Courier New", monospace;
-    color: lime;
     /* Neon green text color */
 }
 
-html, body {
-    height: 100%; /* Ensure html and body cover the full screen */
+html,
+body {
+    height: 100%;
+    /* Ensure html and body cover the full screen */
     margin: 0;
     padding: 0;
 }
 
 .bg {
     background: linear-gradient(to right, #000000, #1a1a1a);
-    background-attachment: fixed; /* Background stays fixed while scrolling */
-    background-size: cover; /* Ensures background covers entire area */
+    background-attachment: fixed;
+    /* Background stays fixed while scrolling */
+    background-size: cover;
+    /* Ensures background covers entire area */
     width: 100%;
-    min-height: 100vh; /* Covers at least the full viewport height */
-    position: fixed; /* Stays fixed on the screen */
+    min-height: 100vh;
+    /* Covers at least the full viewport height */
+    position: fixed;
+    /* Stays fixed on the screen */
     top: 0;
     left: 0;
-    z-index: -1; /* Sends background behind the content */
-    animation: changeBackground 10s linear infinite; /* Background color animation */
+    z-index: -1;
+    /* Sends background behind the content */
+    animation: changeBackground 10s linear infinite;
+    /* Background color animation */
 }
+
 .title {
     margin-top: 25%;
-  }
+}
+
 .main {
     display: flex;
     position: absolute;
@@ -36,7 +46,7 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top:50px;
+    margin-top: 50px;
 }
 
 .button {
@@ -166,4 +176,120 @@ html, body {
     background: #00f;
     border: 2px solid lime;
     opacity: 0.8;
+}
+
+.heart {
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    text-align: center;
+    margin-right: 44px;
+}
+
+.made {
+    margin-right: 6px;
+}
+
+.social-media {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-media a {
+    margin: 1px 5px;
+    color: white;
+    font-size: 15px;
+    padding: 8px;
+    border: 2px solid black;
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+
+.social-media a:hover {
+    transform: scale(1.05);
+    transition: all 0.25s ease-out;
+}
+
+.social-media .insta:hover {
+    background: linear-gradient(45deg,
+            #feda75,
+            #fa7e1e,
+            #d62976,
+            #962fbf,
+            #4f5bd5);
+    color: white;
+}
+
+.social-media .face:hover {
+    background-color: #1877f2;
+    color: white;
+}
+
+.social-media .x:hover {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+.social-media .linkedin:hover {
+    background-color: #0a66c2;
+    color: white;
+}
+
+.social-media .github:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.made {
+    margin-right: 6px;
+}
+
+/*
+Animating title
+*/
+.title {
+    margin-top: 40px;
+    margin-bottom: 24px;
+    color: #fff;
+    font-family: 'Londrina Outline', sans-serif;
+    font-size: 3rem;
+    text-shadow: 0 0 5px #ff7bac,
+        0 0 10px lime,
+        0 0 20px lime,
+        0 0 40px lime,
+        0 0 80px lime,
+        0 0 100px lime,
+        0 0 120px lime;
+    animation: blink 3s infinite linear alternate;
+    cursor: pointer;
+}
+
+.title>.letter {
+    margin: 0 9px;
+}
+
+@keyframes blink {
+
+    60%,
+    70%,
+    79% {
+        opacity: 1;
+    }
+
+    65%,
+    67%,
+    76%,
+    78% {
+        opacity: .2;
+    }
+
+    66%,
+    69%,
+    77% {
+        opacity: .08;
+    }
 }
