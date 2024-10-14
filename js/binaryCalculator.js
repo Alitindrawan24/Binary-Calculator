@@ -276,6 +276,8 @@ toggleThemeButton.addEventListener("click", () => {
 });
 
 function openModal(message){
+    console.log(`this is modal`);
+    
     document.getElementById("modalResult").textContent = message;
     document.getElementById("myModal").style.display = "block";
 }
@@ -401,4 +403,53 @@ function calculateParityBit() {
     let ones = binary.split('').filter(bit => bit === '1').length;
     let parity = ones % 2 === 0 ? 'Even' : 'Odd';
     alert(`Parity: ${parity}`);
+}
+
+function squareRootBinary() {
+    let binary = document.form.textview.value;
+    if (typeof binary === 'string') {
+        if (/^[01]+$/.test(binary)) {
+            decimalValue = parseInt(binary, 2);
+        } else {
+            throw new Error("Invalid binary string input.");
+        }
+    } else if (typeof binary === 'number') {
+        decimalValue = binary;
+    } else {
+        throw new Error("Input must be a binary string or a number.");
+    }
+
+    const sqrtValue = Math.sqrt(decimalValue);
+
+    const result = Number.isInteger(decimalValue)
+    ? Math.floor(sqrtValue).toString(2)
+    : sqrtValue;
+
+    const message = `square root of ${binary} is ${result}`;
+    openModal(message);
+}
+
+function factorialBinary() {
+    let binary = document.form.textview.value;
+    let factorial = 1;
+    if (typeof binary === 'string') {
+        if (/^[01]+$/.test(binary)) {
+            decimalValue = parseInt(binary, 2);
+        } else {
+            throw new Error("Invalid binary string input.");
+        }
+    } else if (typeof binary === 'number') {
+        decimalValue = binary;
+    } else {
+        throw new Error("Input must be a binary string or a number.");
+    }
+
+    for (let i = factorial+1; i <= decimalValue; i++) {
+        factorial *= i
+    }
+
+    console.log(decimalValue);
+
+    const message = `factorial of ${binary} is ${factorial}`
+    openModal(message)
 }
