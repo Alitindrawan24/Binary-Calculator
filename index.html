@@ -12,6 +12,11 @@
 </head>
 
 <body>
+    <div id="toggle-theme-button" class="theme-container shadow-dark">
+        <img width="50px" id="theme-icon "
+            src="./images/moon.png"
+            alt="ERR">
+    </div>
     <div class="bg"></div>
     <div class="main">
         <h1 class="title">Binary Calculator</h1>
@@ -52,13 +57,9 @@
                 <td><input class="button" type="button" value="." onclick="decimal()"></td>
                 <td><input class="button" type="button" value="Octal" onclick="binaryToOctal()"></td>
                 <td><input id="eql" class="button" type="button" value="=" onclick="eql()"></td>
-                <td>
-                    <div id="toggle-theme-button" class="theme-container shadow-dark">
-                        <img width="50px" id="theme-icon "
-                            src="./images/moon.png"
-                            alt="ERR">
-                    </div>
-                </td>
+                
+                    <td><input class="button" type="button" value="Parity" onclick="calculateParityBit()"></td>
+                
             </tr>
             <tr>
                 <td><input class="button" type="button" value="Hex" onclick="binaryToHexadecimal()"></td>
