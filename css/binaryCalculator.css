@@ -4,26 +4,22 @@
 }
 
 html, body {
-  height: 100%; /* Ensures the full height of the page */
+  height: 100%;
   margin: 0;
   padding: 0;
 }
 
 .bg {
   background: linear-gradient(to right, #e91e63, #3151b5);
-  background-attachment: fixed; /* Background stays fixed while scrolling */
-  background-size: cover; /* Ensures background covers entire area */
+  background-attachment: fixed;
+  background-size: cover;
   width: 100%;
-  min-height: 100vh; /* Covers at least the full viewport height */
-  position: fixed; /* Stays fixed on the screen */
+  min-height: 100vh;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: -1; /* Sends background behind the content */
-  animation: changeBackground 10s linear infinite; /* Background color animation */
-}
-
-.title {
-  margin-top: 25%;
+  z-index: -1;
+  animation: changeBackground 10s linear infinite;
 }
 
 .main {
@@ -35,7 +31,15 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top:50px;
+  margin-top: 50px;
+}
+
+.title {
+  font-family: Berlin Sans FB;
+  font-style: oblique;
+  color: silver;
+  text-align: center;
+  margin-top: 5%;
 }
 
 .button {
@@ -52,8 +56,7 @@ html, body {
 }
 
 .button:hover {
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
   background: rgb(88, 153, 184);
 }
 
@@ -80,48 +83,16 @@ html, body {
   font-size: large;
 }
 
-.title {
-  font-family: Berlin Sans FB;
-  font-style: oblique;
-  color: silver;
-  text-align: center;
-}
-
 @keyframes changeBackground {
-  0% {
-    background: #e91e63;
-  }
-
-  25% {
-    background: #3151b5;
-  }
-
-  50% {
-    background: #e91e63;
-  }
-
-  75% {
-    background: #3151b5;
-  }
-
-  100% {
-    background: #e91e63;
-  }
+  0% { background: #e91e63; }
+  25% { background: #3151b5; }
+  50% { background: #e91e63; }
+  75% { background: #3151b5; }
+  100% { background: #e91e63; }
 }
 
 .input-container {
   position: relative;
-}
-
-@keyframes blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0;
-  }
 }
 
 /* Modal styles */
@@ -181,6 +152,7 @@ html, body {
   background: rgb(88, 153, 184);
   opacity: 0.8;
 }
+
 .heart {
   font-size: 20px;
   position: relative;
@@ -190,55 +162,66 @@ html, body {
   transition: color 1s;
 }
 
-
 .footer:hover .heart {
   color: #bf360c;
-  -webkit-animation: beat 0.35s infinite alternate;
-  -moz-animation: beat 0.35s infinite alternate;
-  -ms-animation: beat 0.35s infinite alternate;
-  -o-animation: beat 0.35s infinite alternate;
   animation: beat 0.35s infinite alternate;
-  -webkit-transform-origin: center;
-  -moz-transform-origin: center;
-  -o-transform-origin: center;
-  -ms-transform-origin: center;
   transform-origin: center;
 }
 
 @keyframes beat {
-  to {
-    -webkit-transform: scale(1.4);
-    -moz-transform: scale(1.4);
-    -o-transform: scale(1.4);
-    -ms-transform: scale(1.4);
-    transform: scale(1.4);
+  to { transform: scale(1.4); }
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  .button {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+  }
+
+  .textview {
+    width: 250px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+
+  .theme-container {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+  }
+
+  .title {
+    font-size: 24px;
   }
 }
 
-@-moz-keyframes beat {
-  to {
-    -moz-transform: scale(1.4);
-    transform: scale(1.4);
+@media screen and (max-width: 480px) {
+  .button {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .textview {
+    width: 200px;
+    height: 35px;
+    font-size: 18px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .theme-container {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
   }
 }
 
-@-webkit-keyframes beat {
-  to {
-    -webkit-transform: scale(1.4);
-    transform: scale(1.4);
-  }
-}
-
-@-ms-keyframes beat {
-  to {
-    -ms-transform: scale(1.4);
-    transform: scale(1.4);
-  }
-}
-
-@-o-keyframes beat {
-  to {
-    -o-transform: scale(1.4);
-    transform: scale(1.4);
-  }
-}
