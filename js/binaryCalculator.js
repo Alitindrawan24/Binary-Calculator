@@ -346,6 +346,25 @@ const rolButton = document.querySelector('input[value="ROL"]');
 rorButton.addEventListener("click", () => circularShift('right'));
 rolButton.addEventListener("click", () => circularShift('left'));
 
+function bitwiseNOT() {
+    let binaryInput = res.value;
+    let binaryInt = parseInt(binaryInput, 2);
+    if (!isNaN(binaryInt)) {
+        // Calculate number of bits in the original input
+        let numBits = binaryInput.length;
+
+        // Apply bitwise NOT and then mask it to the length of the original input
+        let invertedBinaryInt = ~binaryInt;
+        let mask = Math.pow(2, numBits) - 1;
+        let finalBinary = invertedBinaryInt & mask;
+
+        // Convert back to binary string with padding to ensure it has the same length as input
+        res.value = finalBinary.toString(2).padStart(numBits, '0');
+    } else {
+        res.value = "Invalid Input";
+    }
+}
+
 function bitwiseAND() {
     const input = document.form.textview.value.split(",");
     if (input.length === 2) {
