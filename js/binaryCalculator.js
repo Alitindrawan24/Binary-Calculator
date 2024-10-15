@@ -485,3 +485,20 @@ function factorialBinary() {
   const message = `factorial of ${binary} is ${factorial}`;
   openModal(message);
 }
+
+function toggleAdvancedOptions() {
+    const advancedOptions = document.getElementById('advancedOptions');
+    const toggleButton = document.getElementById('toggleAdvanced');
+    
+    if (advancedOptions.style.display === 'none' || advancedOptions.style.display === '') {
+        advancedOptions.style.display = 'block';
+        toggleButton.textContent = 'Hide Advanced Options';
+    } else {
+        advancedOptions.style.display = 'none';
+        toggleButton.textContent = 'Show Advanced Options';
+    }
+}
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.getElementById('toggleAdvanced');
+    toggleButton.addEventListener('click', toggleAdvancedOptions);
+});
