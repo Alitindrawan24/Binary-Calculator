@@ -1,0 +1,406 @@
+@import "theme1.css";
+@import "theme2.css";
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap');
+
+@font-face {
+    font-family: 'Londrina Outline', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    min-height: 100svh;
+    min-width: 100%;
+    /* Ensure html and body cover the full screen */
+    margin: 0;
+    padding: 0;
+    animation: changeBackground 10s linear infinite;
+}
+
+header {
+    margin: 3rem;
+    min-width: 365px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+}
+
+@keyframes changeBackground {
+    0% {
+        background: var(--bg-primary-color);
+    }
+
+    25% {
+        background: var(--bg-secondary-color);
+    }
+
+    50% {
+        background: var(--bg-primary-color);
+    }
+
+    75% {
+        background: var(--bg-secondary-color);
+    }
+
+    100% {
+        background: var(--bg-primary-color);
+    }
+}
+
+@layer base {
+    html {
+        /* Main background color */
+        --bg-primary-color: #1e3de9;
+
+        /* Secondary background color */
+        --bg-secondary-color: #4b0699;
+
+        /* title color variable*/
+        --title-color: silver;
+        --title-shadow-color: #ff7bac;
+
+        /* text color variable*/
+        --text-color: silver;
+
+        /* font family */
+        --font-family-title: 'Londrina Outline', sans-serif;
+
+        /* buttons */
+        --button-text-color: white;
+        --button-bg-color: #607d8b;
+        --button-hover-bg-color: #5899b8;
+        --button-hover-shadow-color: #5899b8;
+
+        /* textview */
+        --textview-bg-color: #fff;
+        --textview-color: #000000;
+
+        /* modal */
+        --modal-bg-color: transparent;
+        --modal-content-box-bg-color: #fff;
+        --modal-text-color: #000;
+        --modal-border-color: #888;
+        --modal-close-color: #aaa;
+        --modal-close-hover-color: #ff0000;
+
+        /* footer */
+        --footer-text-color: #fff;
+
+        /* heart */
+        --heart-color: silver;
+
+        /*social media*/
+        --social-logo-color: silver;
+        --social-outline-color: silver;
+    }
+}
+
+/* Animating title */
+.title {
+    width: 100%;
+    letter-spacing: 0.5ch;
+    /* font-family: var(--font-family-title); */
+    color: var(--title-color);
+    text-align: center;
+    font-size: 3rem;
+    text-shadow: 0 0 5px,
+        0 0 10px var(--title-shadow-color),
+        0 0 20px var(--title-shadow-color),
+        0 0 40px var(--title-shadow-color),
+        0 0 80px var(--title-shadow-color),
+        0 0 100px var(--title-shadow-color),
+        0 0 120px var(--title-shadow-color);
+    animation: blink 3s infinite linear alternate;
+    cursor: pointer;
+}
+
+@keyframes blink {
+
+    60%,
+    70%,
+    79% {
+        opacity: 1;
+    }
+
+    65%,
+    67%,
+    76%,
+    78% {
+        opacity: .2;
+    }
+
+    66%,
+    69%,
+    77% {
+        opacity: .08;
+    }
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    height: 75px;
+    font-size: 25px;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 15px;
+    border: none;
+    color: var(--button-text-color);
+    background-color: var(--button-bg-color);
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    box-shadow: 0 0px 20px var(--button-hover-shadow-color);
+    background: var(--button-hover-bg-color);
+}
+
+.textview_container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.textview {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    width: 305px;
+    height: 50px;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--textview-bg-color);
+}
+
+.input-container {
+    position: relative;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: var(--modal-bg-color);
+    inset: 0;
+}
+
+.modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    border: 1px solid var(--modal-border-color);
+    border-radius: 15px;
+    background-color: var(--modal-content-box-bg-color);
+    width: 305px;
+    height: 50px;
+    /* You may want to adjust this height */
+    z-index: 1;
+    left: 8rem;
+    top: 16rem;
+}
+
+.close {
+    position: relative;
+    top: 0;
+    right: 0;
+    color: var(--modal-close-color);
+    float: right;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    inset: 0;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--modal-focus-color);
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--modal-close-hover-color);
+}
+
+.theme_button {
+    padding: 15px;
+    border: 2px solid var(--social-outline-color);
+    border-radius: 10px;
+    color: var(--social-logo-color);
+    background-color: transparent;
+}
+
+.theme_button:hover {
+    transform: scale(1.05);
+    transition: all 0.25s ease-out;
+}
+
+.magic:hover {
+    color: #fff;
+    background-color: #ff00ff;
+}
+
+.covid:hover {
+    color: #00ff00;
+    background-color: #014701;
+}
+
+.meta:hover {
+    color: #fff;
+    background-color: #0866FF;
+}
+
+/* Made with <3 */
+.madewith {
+    display: flex;
+    margin-top: 0.5rem;
+    text-align: right;
+    font-family: var(--font-family-title);
+    font-style: oblique;
+    font-size: large;
+    justify-items: center;
+    align-items: center;
+    color: var(--heart-color);
+}
+
+.heart {
+
+    font-size: 20px;
+    color: var(--heart-color);
+    display: inline-block;
+    text-align: center;
+    transition: color 1s;
+    margin-left: 0.5rem;
+}
+
+.heart:hover {
+    cursor: pointer;
+    color: var(--heart-color);
+    -webkit-animation: beat 0.35s infinite alternate;
+    -moz-animation: beat 0.35s infinite alternate;
+    -ms-animation: beat 0.35s infinite alternate;
+    -o-animation: beat 0.35s infinite alternate;
+    animation: beat 0.35s infinite alternate;
+    -webkit-transform-origin: center;
+    -moz-transform-origin: center;
+    -o-transform-origin: center;
+    -ms-transform-origin: center;
+    transform-origin: center;
+}
+
+
+/* social media icons */
+.socialcontainer {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes beat {
+    to {
+        -webkit-transform: scale(1.4);
+        -moz-transform: scale(1.4);
+        -o-transform: scale(1.4);
+        -ms-transform: scale(1.4);
+        transform: scale(1.4);
+    }
+}
+
+@-moz-keyframes beat {
+    to {
+        -moz-transform: scale(1.4);
+        transform: scale(1.4);
+    }
+}
+
+@-webkit-keyframes beat {
+    to {
+        -webkit-transform: scale(1.4);
+        transform: scale(1.4);
+    }
+}
+
+@-ms-keyframes beat {
+    to {
+        -ms-transform: scale(1.4);
+        transform: scale(1.4);
+    }
+}
+
+@-o-keyframes beat {
+    to {
+        -o-transform: scale(1.4);
+        transform: scale(1.4);
+    }
+}
+
+.socialcontainer a {
+    margin: 1px 5px;
+    color: var(--social-logo-color);
+    font-size: 15px;
+    padding: 15px;
+    border: 2px solid var(--social-outline-color);
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.socialcontainer a:hover {
+    transform: scale(1.05);
+    transition: all 0.25s ease-out;
+}
+
+.socialcontainer .insta:hover {
+    background: linear-gradient(45deg,
+            #feda75,
+            #fa7e1e,
+            #d62976,
+            #962fbf,
+            #4f5bd5);
+    color: white;
+}
+
+.socialcontainer .face:hover {
+    background-color: #1877f2;
+    color: white;
+}
+
+.socialcontainer .x:hover {
+    background-color: #000000;
+    color: white;
+}
+
+.socialcontainer .linkedin:hover {
+    background-color: #0a66c2;
+    color: white;
+}
+
+.socialcontainer .github:hover {
+    background-color: white;
+}
