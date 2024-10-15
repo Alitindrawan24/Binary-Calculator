@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+@font-face {
+    font-family: 'Creepster', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Creepster&display=swap') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html[class="theme1"] {
+    /* Main background color */
+    --bg-primary-color: #000;
+
+    /* Secondary background color */
+    --bg-secondary-color: #000;
+
+
+    /* title color variable*/
+    --title-color: #00ff00;
+    --title-shadow-color: #0866FF;
+
+    /* text color variable*/
+    --text-color: #00ff00;
+
+    --font-family-title: 'Creepster', sans-serif;
+
+    /* buttons */
+    --button-text-color: #00ff00;
+    --button-bg-color: #018001;
+    --button-hover-bg-color: #03b6b6;
+    --button-hover-shadow-color: #4c8ef8;
+
+    /* textview */
+    --textview-bg-color: #fff;
+    --textview-color: #000000;
+
+    /* modal */
+    --modal-bg-color: transparent;
+    --modal-content-box-bg-color: #fff;
+    --modal-text-color: #000;
+    --modal-border-color: #888;
+    --modal-close-color: #aaa;
+    --modal-close-hover-color: #ff0000;
+
+    /* heart */
+    --heart-color: #00ff00;
+
+    /*social media*/
+    --social-logo-color: #00ff00;
+    --social-outline-color: #00ff00;
+}
