@@ -112,7 +112,8 @@
   .button {
     width: 75px;
     height: 75px;
-    font-size: 25px;
+    font-size: 15px;
+    font-weight: 700;
     margin: 2px;
     cursor: pointer;
     border-radius: 15px;
@@ -186,7 +187,7 @@
   
     .textview {
       width: 250px;
-      height: 40pxs
+      height: 40pxs;
       font-size: 20px;
     }
   
