@@ -3,27 +3,22 @@
 * {
     margin: 0;
     padding: 0;
-}
-
-html,
-body {
+    box-sizing: border-box;
+  }
+  
+  html, body {
     height: 100%;
-    /* Ensures the full height of the page */
     margin: 0;
     padding: 0;
-}
-
-.bg {
-    background: linear-gradient(to right, #e91e63, #3151b5);
-    background-attachment: fixed;
-    /* Background stays fixed while scrolling */
-    background-size: cover;
-    /* Ensures background covers entire area */
+    overflow-x: hidden;
+  }
+  
+  .bg {
+    background: linear-gradient(135deg, #e91e63, #3151b5, #00c9ff, #92fe9d);
+    background-size: 300% 300%;
     width: 100%;
     min-height: 100vh;
-    /* Covers at least the full viewport height */
     position: fixed;
-    /* Stays fixed on the screen */
     top: 0;
     left: 0;
     z-index: -1;
@@ -42,13 +37,103 @@ body {
     padding-top: 0; /* Ensure padding isn't pushing the content down */
     min-height: 100vh;
     position: relative; /* Change from absolute if previously set so */
+    animation: gradientShift 15s ease infinite, floating 10s ease-in-out infinite;
+    overflow: hidden;
+  }
+  
+  .stars {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
 }
 
 .button {
+    height: 100%;
+    background: transparent;
+    pointer-events: none;
+    z-index: 0;
+    animation: starMovement 50s linear infinite;
+  }
+  
+  @keyframes starMovement {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-2000px); }
+  }
+  
+  .star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    animation: starBlink 5s infinite ease-in-out alternate;
+  }
+  
+  @keyframes starBlink {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+  
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  @keyframes floating {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .main {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+  
+  .title {
+    font-family: 'Berlin Sans FB', sans-serif;
+    font-style: oblique;
+    color: white;
+    text-align: center;
+    margin-top: 5%;
+    font-size: 4rem;
+    animation: glowText 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glowText {
+    0% {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    }
+    100% {
+      text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1);
+    }
+  }
+  
+  .button {
     width: 75px;
     height: 75px;
-    font-size: 25px;
+    font-size: 15px;
+    font-weight: 700;
     margin: 2px;
     cursor: pointer;
     border-radius: 15px;
@@ -56,36 +141,54 @@ body {
     color: white;
     background-color: #607d8b;
     transition-duration: 0.4s;
-    text-align: center;
-}
-
-.button:hover {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-        0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    animation: pulse 2s infinite;
+    box-shadow: 0 0 15px rgba(0, 200, 255, 0.5);
+  }
+  
+  .button:hover {
     background: rgb(88, 153, 184);
-}
-
-.textview {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 1);
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .textview {
     width: 100%;
     max-width: 305px;
     height: 50px;
     margin: 5px;
     font-size: 25px;
     padding: 5px;
-    border: 2px solid white;
+    border: none;
     border-radius: 15px;
     background-color: #ffffff;
-    text-align: center;
-}
-
-.name {
+    animation: rippleEffect 15s infinite linear;
+  }
+  
+  @keyframes rippleEffect {
+    0% { background-color: #ffffff; }
+    50% { background-color: #f0f0f0; }
+    100% { background-color: #ffffff; }
+  }
+  
+  .name {
     padding: 20px;
     bottom: 0;
     right: 0;
     text-align: right;
     position: absolute;
     color: silver;
-    font-family: Berlin Sans FB;
+    font-family: 'Berlin Sans FB';
     font-style: oblique;
     font-size: large;
 }

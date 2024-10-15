@@ -1,55 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap');
 
+
+* Base Styles */
 * {
     margin: 0;
     padding: 0;
-    /* Neon green text color */
+    font-family: "Courier New", monospace;
+    color: lime;
+    transition: all 0.3s ease;
 }
 
-html,
-body {
+html, body {
     height: 100%;
-    /* Ensure html and body cover the full screen */
     margin: 0;
     padding: 0;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode (Default) */
+body {
+    background: #000; /* Black background */
 }
 
 .bg {
-    background: linear-gradient(to right, #000000, #1a1a1a);
+    background: radial-gradient(circle, #1a1a1a, #000000 70%);
+    /* A subtle radial gradient for a beautiful dark background effect */
     background-attachment: fixed;
-    /* Background stays fixed while scrolling */
     background-size: cover;
-    /* Ensures background covers entire area */
     width: 100%;
     min-height: 100vh;
-    /* Covers at least the full viewport height */
     position: fixed;
-    /* Stays fixed on the screen */
     top: 0;
     left: 0;
     z-index: -1;
-    /* Sends background behind the content */
-    animation: changeBackground 10s linear infinite;
-    /* Background color animation */
 }
 
-.title {
-    margin-top: 25%;
-}
-
-.main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0; /* Adjusted from a larger value to reduce space */
-    padding-top: 0; /* Ensure padding isn't pushing the content down */
-    min-height: 100vh;
-    position: relative; /* Change from absolute if previously set so */
-    width: 100%;
-}
-
-/* 
 .main {
     display: flex;
     position: absolute;
@@ -61,65 +45,24 @@ body {
     justify-content: center;
     margin-top: 50px;
 }
- */
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-    background-color: #111;
-    margin: 50% auto;
-    padding: 30px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-.close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-/* End of Modal Style */
 
 .button {
     width: 75px;
     height: 75px;
-    font-size: 25px;
+    font-size: 15px;
+    font-weight: 700;
     margin: 2px;
     cursor: pointer;
     border-radius: 15px;
     border: 2px solid lime;
-    /* Lime-colored border */
     color: lime;
-    /* Neon green text color */
     background-color: #111;
-    /* Dark background for buttons */
     transition-duration: 0.4s;
 }
 
 .button:hover {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-        0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.24), 0 17px 50px rgba(0, 0, 0, 0.19);
     background: #00f;
-    /* Neon blue background on hover */
 }
 
 .textview {
@@ -129,13 +72,9 @@ body {
     font-size: 25px;
     padding: 5px;
     border: 2px solid lime;
-    /* Lime-colored border */
     border-radius: 15px;
     background-color: #111;
-    /* Dark background for input field */
     color: lime;
-    text-align: center;
-    /* Neon green text color */
 }
 
 .name {
@@ -145,23 +84,18 @@ body {
     text-align: right;
     position: absolute;
     color: lime;
-    /* Neon green text color */
-     font-family: Berlin Sans FB;
-    font-style: oblique;
+    font-family: "Courier New", monospace;
     font-size: large;
 }
 
 .title {
-    font-family: Berlin Sans FB;
-    font-style: oblique;
+    font-family: "Berlin Sans FB";
     color: lime;
-    /* Neon green text color */
     text-align: center;
 }
 
 .thh {
-    font-family: Berlin Sans FB;
-    font-style: oblique;
+    font-family: "Berlin Sans FB";
     color: lime;
     background-color: #1a1a1a;
     text-align: center;
@@ -185,212 +119,47 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-@keyframes changeBackground {
-    0% {
-        background: #000;
-    }
-
-    25% {
-        background: #111;
-    }
-
-    50% {
-        background: #000;
-    }
-
-    75% {
-        background: #111;
-    }
-
-    100% {
-        background: #000;
-    }
+/* Light Mode Styles */
+.light-mode {
+    background: #f0f0f0;
+    color: #000;
 }
 
-
-.theme-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 75px;
-    height: 75px;
-    border-radius: 15px;
-    border: 2px solid lime;
-    cursor: pointer;
-    color: lime;
-    transition-duration: 0.4s;
+.light-mode .bg {
+    background: linear-gradient(to right, #ffffff, #f0f0f0);
 }
 
-.theme-container:hover {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-        0 17px 50px 0 rgba(0, 0, 0, 0.19);
-    background: #00f;
-    border: 2px solid lime;
-    opacity: 0.8;
+.light-mode .button {
+    border: 2px solid #333;
+    color: #000;
+    background-color: #ddd;
 }
 
-.heart {
-    font-size: 20px;
-    position: relative;
-    top: 2px;
-    display: inline-block;
-    text-align: center;
-    transition: color 1s;
-    margin-right: 44px;
+.light-mode .button:hover {
+    background: #007bff;
 }
 
-
-.footer:hover .heart {
-    color: #bf360c;
-    -webkit-animation: beat 0.35s infinite alternate;
-    -moz-animation: beat 0.35s infinite alternate;
-    -ms-animation: beat 0.35s infinite alternate;
-    -o-animation: beat 0.35s infinite alternate;
-    animation: beat 0.35s infinite alternate;
-    -webkit-transform-origin: center;
-    -moz-transform-origin: center;
-    -o-transform-origin: center;
-    -ms-transform-origin: center;
-    transform-origin: center;
+.light-mode .textview {
+    border: 2px solid #333;
+    background-color: #fff;
+    color: #000;
 }
 
-@keyframes beat {
-    to {
-        -webkit-transform: scale(1.4);
-        -moz-transform: scale(1.4);
-        -o-transform: scale(1.4);
-        -ms-transform: scale(1.4);
-        transform: scale(1.4);
-    }
+.light-mode .name {
+    color: #333;
 }
 
-@-moz-keyframes beat {
-    to {
-        -moz-transform: scale(1.4);
-        transform: scale(1.4);
-    }
+.light-mode .thh {
+    background-color: #fff;
+    color: #000;
 }
 
-@-webkit-keyframes beat {
-    to {
-        -webkit-transform: scale(1.4);
-        transform: scale(1.4);
-    }
+.theme-toggle {
+    background-color: lime;
+    color: #000;
 }
 
-@-ms-keyframes beat {
-    to {
-        -ms-transform: scale(1.4);
-        transform: scale(1.4);
-    }
-}
-
-@-o-keyframes beat {
-    to {
-        -o-transform: scale(1.4);
-        transform: scale(1.4);
-    }
-}
-
-.social-media {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.social-media a {
-    margin: 1px 5px;
-    color: white;
-    font-size: 15px;
-    padding: 8px;
-    border: 2px solid black;
-    border-radius: 8px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
-}
-
-
-.social-media a:hover {
-    transform: scale(1.05);
-    transition: all 0.25s ease-out;
-}
-
-.social-media .insta:hover {
-    background: linear-gradient(45deg,
-            #feda75,
-            #fa7e1e,
-            #d62976,
-            #962fbf,
-            #4f5bd5);
-    color: white;
-}
-
-.social-media .face:hover {
-    background-color: #1877f2;
-    color: white;
-}
-
-.social-media .x:hover {
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-}
-
-.social-media .linkedin:hover {
-    background-color: #0a66c2;
-    color: white;
-}
-
-.social-media .github:hover {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-}
-
-.made {
-    margin-right: 6px;
-}
-
-/*
-Animating title
-*/
-.title {
-    margin-top: 40px;
-    margin-bottom: 24px;
+.theme-toggle:hover {
+    background-color: #00ff00;
     color: #fff;
-    font-family: 'Londrina Outline', sans-serif;
-    font-size: 3rem;
-    text-shadow: 0 0 5px #ff7bac,
-        0 0 10px lime,
-        0 0 20px lime,
-        0 0 40px lime,
-        0 0 80px lime,
-        0 0 100px lime,
-        0 0 120px lime;
-    animation: blink 3s infinite linear alternate;
-    cursor: pointer;
-}
-
-.title>.letter {
-    margin: 0 9px;
-}
-
-@keyframes blink {
-
-    60%,
-    70%,
-    79% {
-        opacity: 1;
-    }
-
-    65%,
-    67%,
-    76%,
-    78% {
-        opacity: .2;
-    }
-
-    66%,
-    69%,
-    77% {
-        opacity: .08;
-    }
 }
