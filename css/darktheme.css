@@ -121,6 +121,7 @@ body {
     background-color: #111;
     /* Dark background for input field */
     color: lime;
+    text-align: center;
     /* Neon green text color */
 }
 
@@ -132,7 +133,7 @@ body {
     position: absolute;
     color: lime;
     /* Neon green text color */
-    font-family: "Courier New", monospace;
+     font-family: Berlin Sans FB;
     font-style: oblique;
     font-size: large;
 }
@@ -222,10 +223,6 @@ body {
     display: inline-block;
     text-align: center;
     margin-right: 44px;
-}
-
-.made {
-    margin-right: 6px;
 }
 
 .social-media {
