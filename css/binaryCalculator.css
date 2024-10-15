@@ -110,9 +110,9 @@
   }
   
   .button {
-    width: 75px;
-    height: 75px;
-    font-size: 25px;
+    width: 60px;
+    height: 60px;
+    font-size: 15px;
     margin: 2px;
     cursor: pointer;
     border-radius: 15px;
@@ -160,16 +160,66 @@
   }
   
   .name {
-    padding: 20px;
-    bottom: 0;
-    right: 0;
+    
+   
+    bottom: 0px;
+    margin-right: 0px;
     text-align: right;
-    position: absolute;
-    color: silver;
+  position:absolute;
+
     font-family: 'Berlin Sans FB';
     font-style: oblique;
     font-size: large;
   }
+  .made {
+    margin-right: 10px; /* Space between the text and the heart */
+    font-family: 'Arial', sans-serif; /* Adjust as needed */
+}
+
+.heart {
+    font-size: 24px; /* Adjust size as needed */
+    color: red; /* Adjust color as needed */
+}
+
+  .social-media {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 5px;
+ 
+    border-radius: 10px;
+}
+
+.social-media a {
+    color: #333;
+    font-size: 30px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+
+
+/* Specific colors for each social media icon */
+.insta:hover {
+    color: #E4405F;
+}
+
+.face:hover {
+    color: navy;
+}
+
+.x:hover {
+    color:black;
+}
+
+.linkedin:hover {
+    color: navy;
+}
+
+.github:hover {
+    color: #171515;
+}
+
   
   @keyframes rippleBg {
     0% { background-color: rgba(255, 255, 255, 0.2); }
@@ -179,19 +229,19 @@
   /* Media Queries for Responsiveness */
   @media screen and (max-width: 768px) {
     .button {
-      width: 60px;
-      height: 60px;
+      width: 55px;
+      height: 55px;
       font-size: 20px;
     }
   
     .textview {
       width: 250px;
-      height: 40pxs
+      height: 40px;
       font-size: 20px;
     }
   
     .title {
-      font-size: 3rem;
+    font-size: 20px
     }
   }
   
@@ -203,13 +253,11 @@
     }
   
     .textview {
-      width: 200px;
+      width: 100px;
       height: 35px;
       font-size: 18px;
     }
   
-    .title {
-      font-size: 2.5rem;
-    }
+   
   }
   
