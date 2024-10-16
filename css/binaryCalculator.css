@@ -130,7 +130,7 @@
   }
   
   .button {
-    width: 75px;
+    width: 90px;
     height: 75px;
     font-size: 15px;
     font-weight: 700;
@@ -228,6 +228,9 @@ table {
 
 .input-container {
     position: relative;
+    width: 80%; /* Adjusted width to make it bigger */
+    height: 50px; /* Adjusted height to make it bigger */
+    padding: 10px; /* Increased padding for better spacing */
 }
 
 @keyframes blink {

@@ -36,26 +36,24 @@
                         <td><input class="button" type="button" value="C" onclick="clc()"></td>
                         <td><input class="button" type="button" value="⌫" onclick="backspace()"></td>
                         <td><input class="button" type="button" value="/" onclick="insert('/')"></td>
-                    </tr>
-                    <tr>
                         <td><input class="button" type="button" value="M-" onclick="subtractFromMemory()"></td>
                         <td><input class="button" type="button" value="0" onclick="insert(0)"></td>
                         <td><input class="button" type="button" value="1" onclick="insert(1)"></td>
-                        <td><input class="button" type="button" value="*" onclick="insert('*')"></td>
+                        
                     </tr>
                     <tr>
+                        <td><input class="button" type="button" value="*" onclick="insert('*')"></td>
                         <td><input class="button" type="button" value="MR" onclick="recallMemory()"></td>
                         <td><input class="button" type="button" value="1's" onclick="oneComplement()"></td>
                         <td><input class="button" type="button" value="2's" onclick="twoComplement()"></td>
                         <td><input class="button" type="button" value="-" onclick="insert('-')"></td>
-                    </tr>
-                    <tr>
                         <td><input class="button" type="button" value="MC" onclick="clearMemory()"></td>
                         <td><input class="button" type="button" value=">>" onclick="insert('>')"></td>
-                        <td><input class="button" type="button" value="<<" onclick="insert('<')"></td>
-                        <td><input class="button" type="button" value="+" onclick="insert('+')"></td>
+                        
                     </tr>
                     <tr>
+                        <td><input class="button" type="button" value="<<" onclick="insert('<')"></td>
+                        <td><input class="button" type="button" value="+" onclick="insert('+')"></td>
                         <td><input class="button" type="button" value="." onclick="decimal()"></td>
                         <td><input class="button" type="button" value="Octal" onclick="binaryToOctal()"></td>
                         <td><input id="eql" class="button" type="button" value="=" onclick="eql()"></td>
@@ -64,37 +62,36 @@
                                 <img width="50px" id="theme-icon" src="./images/moon.png" alt="ERR">
                             </div>
                         </td>
-                    </tr>
-                    <tr>
                         <td><input class="button" type="button" value="Hex" onclick="binaryToHexadecimal()"></td>
-                        <td><input class="button" type="button" value="Dec" onclick="binaryToDecimal()"></td>
-                        <td><input class="button" type="button" value="ROR" onclick="circularShift('right')"></td>
-                        <td><input class="button" type="button" value="ROL" onclick="circularShift('left')"></td>
+                        
+                        
                     </tr>
                 </table>
             </div>
-            <div class="advanced-options" id="advancedOptions">
                 <table>
                     <tr>
+                        <td><input class="button" type="button" value="Dec" onclick="binaryToDecimal()"></td>
+                        <td><input class="button" type="button" value="ROR" onclick="circularShift('right')"></td>
+                        <td><input class="button" type="button" value="ROL" onclick="circularShift('left')"></td>
                         <td><input class="button" type="button" value="NOT" onclick="bitwiseNOT()"></td>
                         <td><input class="button" type="button" value="AND" onclick="bitwiseAND()"></td>
                         <td><input class="button" type="button" value="OR" onclick="bitwiseOR()"></td>
                         <td><input class="button" type="button" value="XOR" onclick="bitwiseXOR()"></td>
+                        
+                        
                     </tr>
                     <tr>
                         <td><input class="button" type="button" value="Gray" onclick="binaryToGray()"></td>
                         <td><input class="button" type="button" value="Float" onclick="binaryToFloat()"></td>
                         <td><input class="button" type="button" value="Parity" onclick="calculateParityBit()"></td>
                         <td><input class="button" type="button" value="Square" onclick="squareRootBinary()"></td>
-                    </tr>
-                    <tr>
                         <td><input class="button" type="button" value="Fact" onclick="factorialBinary()"></td>
+                        
                     </tr>
                     </tr>
                 </table>
             </div>
         </div>
-        <button id="toggleAdvanced" class="toggle-button">Show Advanced Options</button>
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal()">&times;</span>
@@ -133,4 +130,3 @@
     <script src="js/themeSwitcher.js"></script>
 </body>
 </html>
-
