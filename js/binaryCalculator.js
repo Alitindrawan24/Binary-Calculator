@@ -433,9 +433,10 @@ function binaryToFloat() {
 function calculateParityBit() {
   let binary = document.form.textview.value;
   let ones = binary.split("").filter((bit) => bit === "1").length;
-  let parity = ones % 2 === 0 ? "Even" : "Odd";
-  alert(`Parity: ${parity}`);
+  let parityBit = ones % 2 === 0 ? "0" : "1";  
+  alert(`Binary: ${binary}, Parity bit: ${parityBit}`);
 }
+
 
 function squareRootBinary() {
   let binary = document.form.textview.value;
