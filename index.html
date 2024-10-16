@@ -39,19 +39,21 @@
                         <td><input class="button" type="button" value="M-" onclick="subtractFromMemory()"></td>
                         <td><input class="button" type="button" value="0" onclick="insert(0)"></td>
                         <td><input class="button" type="button" value="1" onclick="insert(1)"></td>
-                        <td><input class="button" type="button" value="*" onclick="insert('*')"></td>
+                        
                     </tr>
                     <tr>
+                        <td><input class="button" type="button" value="*" onclick="insert('*')"></td>
                         <td><input class="button" type="button" value="MR" onclick="recallMemory()"></td>
                         <td><input class="button" type="button" value="1's" onclick="oneComplement()"></td>
                         <td><input class="button" type="button" value="2's" onclick="twoComplement()"></td>
                         <td><input class="button" type="button" value="-" onclick="insert('-')"></td>
                         <td><input class="button" type="button" value="MC" onclick="clearMemory()"></td>
                         <td><input class="button" type="button" value=">>" onclick="insert('>')"></td>
-                        <td><input class="button" type="button" value="<<" onclick="insert('<')"></td>
-                        <td><input class="button" type="button" value="+" onclick="insert('+')"></td>
+                        
                     </tr>
                     <tr>
+                        <td><input class="button" type="button" value="<<" onclick="insert('<')"></td>
+                        <td><input class="button" type="button" value="+" onclick="insert('+')"></td>
                         <td><input class="button" type="button" value="." onclick="decimal()"></td>
                         <td><input class="button" type="button" value="Octal" onclick="binaryToOctal()"></td>
                         <td><input id="eql" class="button" type="button" value="=" onclick="eql()"></td>
@@ -61,25 +63,30 @@
                             </div>
                         </td>
                         <td><input class="button" type="button" value="Hex" onclick="binaryToHexadecimal()"></td>
-                        <td><input class="button" type="button" value="Dec" onclick="binaryToDecimal()"></td>
-                        <td><input class="button" type="button" value="ROR" onclick="circularShift('right')"></td>
-                        <td><input class="button" type="button" value="ROL" onclick="circularShift('left')"></td>
+                        
+                        
                     </tr>
                 </table>
             </div>
                 <table>
                     <tr>
+                        <td><input class="button" type="button" value="Dec" onclick="binaryToDecimal()"></td>
+                        <td><input class="button" type="button" value="ROR" onclick="circularShift('right')"></td>
+                        <td><input class="button" type="button" value="ROL" onclick="circularShift('left')"></td>
                         <td><input class="button" type="button" value="NOT" onclick="bitwiseNOT()"></td>
                         <td><input class="button" type="button" value="AND" onclick="bitwiseAND()"></td>
                         <td><input class="button" type="button" value="OR" onclick="bitwiseOR()"></td>
                         <td><input class="button" type="button" value="XOR" onclick="bitwiseXOR()"></td>
+                        
+                        
+                    </tr>
+                    <tr>
                         <td><input class="button" type="button" value="Gray" onclick="binaryToGray()"></td>
                         <td><input class="button" type="button" value="Float" onclick="binaryToFloat()"></td>
                         <td><input class="button" type="button" value="Parity" onclick="calculateParityBit()"></td>
                         <td><input class="button" type="button" value="Square" onclick="squareRootBinary()"></td>
-                    </tr>
-                    <tr>
                         <td><input class="button" type="button" value="Fact" onclick="factorialBinary()"></td>
+                        
                     </tr>
                     </tr>
                 </table>
