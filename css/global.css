@@ -131,8 +131,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px; /* Further reduced button size */
-    height: 50px; /* Further reduced button height */
+    width: 65px; /* Further reduced button size */
+    height: 60px; /* Further reduced button height */
     font-size: 18px; /* Reduced font size for buttons */
     margin: 5px; /* Reduced margin between buttons */
     cursor: pointer;
@@ -141,7 +141,7 @@ footer {
     color: var(--button-text-color);
     background-color: var(--button-bg-color);
     transition-duration: 0.4s;
-    flex: 1 1 45%; /* Flex items to take up about 45% of the width */
+    flex: 1 1 48%; /* Flex items to take up about 45% of the width */
 }
 
 .button:hover {
