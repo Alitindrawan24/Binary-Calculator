@@ -32,62 +32,53 @@
             <div class="basic-options">
                 <table>
                     <tr>
-                        <td><input class="button" type="button" value="M+" onclick="addToMemory()"></td>
-                        <td><input class="button" type="button" value="C" onclick="clc()"></td>
-                        <td><input class="button" type="button" value="⌫" onclick="backspace()"></td>
-                        <td><input class="button" type="button" value="/" onclick="insert('/')"></td>
-                        <td><input class="button" type="button" value="M-" onclick="subtractFromMemory()"></td>
-                        <td><input class="button" type="button" value="0" onclick="insert(0)"></td>
-                        <td><input class="button" type="button" value="1" onclick="insert(1)"></td>
-                        
+                        <td><input class="button" type="button" value="M+" title="Memory Add" onclick="addToMemory()"></td>
+                        <td><input class="button" type="button" value="C" title="Clear" onclick="clc()"></td>
+                        <td><input class="button" type="button" value="⌫" title="Backspace" onclick="backspace()"></td>
+                        <td><input class="button" type="button" value="/" title="Divide" onclick="insert('/')"></td>
+                        <td><input class="button" type="button" value="M-" title="Memory Subtract" onclick="subtractFromMemory()"></td>
+                        <td><input class="button" type="button" value="0" title="Zero" onclick="insert(0)"></td>
+                        <td><input class="button" type="button" value="1" title="One" onclick="insert(1)"></td>
                     </tr>
                     <tr>
-                        <td><input class="button" type="button" value="*" onclick="insert('*')"></td>
-                        <td><input class="button" type="button" value="MR" onclick="recallMemory()"></td>
-                        <td><input class="button" type="button" value="1's" onclick="oneComplement()"></td>
-                        <td><input class="button" type="button" value="2's" onclick="twoComplement()"></td>
-                        <td><input class="button" type="button" value="-" onclick="insert('-')"></td>
-                        <td><input class="button" type="button" value="MC" onclick="clearMemory()"></td>
-                        <td><input class="button" type="button" value=">>" onclick="insert('>')"></td>
-                        
+                        <td><input class="button" type="button" value="*" title="Multiply" onclick="insert('*')"></td>
+                        <td><input class="button" type="button" value="MR" title="Memory Recall" onclick="recallMemory()"></td>
+                        <td><input class="button" type="button" value="1's" title="1's Complement" onclick="oneComplement()"></td>
+                        <td><input class="button" type="button" value="2's" title="2's Complement" onclick="twoComplement()"></td>
+                        <td><input class="button" type="button" value="-" title="Subtract" onclick="insert('-')"></td>
+                        <td><input class="button" type="button" value="MC" title="Memory Clear" onclick="clearMemory()"></td>
+                        <td><input class="button" type="button" value=">>" title="Shift Right" onclick="insert('>')"></td>
                     </tr>
                     <tr>
-                        <td><input class="button" type="button" value="<<" onclick="insert('<')"></td>
-                        <td><input class="button" type="button" value="+" onclick="insert('+')"></td>
-                        <td><input class="button" type="button" value="." onclick="decimal()"></td>
-                        <td><input class="button" type="button" value="Octal" onclick="binaryToOctal()"></td>
-                        <td><input id="eql" class="button" type="button" value="=" onclick="eql()"></td>
-                        <td>
-                            <div id="toggle-theme-button" class="theme-container shadow-dark">
+                        <td><input class="button" type="button" value="<<" title="Shift Left" onclick="insert('<')"></td>
+                        <td><input class="button" type="button" value="+" title="Add" onclick="insert('+')"></td>
+                        <td><input class="button" type="button" value="." title="Decimal" onclick="decimal()"></td>
+                        <td><input class="button" type="button" value="Octal" title="Convert to Octal" onclick="binaryToOctal()"></td>
+                        <td><input id="eql" class="button" type="button" value="=" title="Equal" onclick="eql()"></td>
+                        <td><div id="toggle-theme-button" class="theme-container shadow-dark" title="Toggle Theme">
                                 <img width="50px" id="theme-icon" src="./images/moon.png" alt="ERR">
                             </div>
                         </td>
-                        <td><input class="button" type="button" value="Hex" onclick="binaryToHexadecimal()"></td>
-                        
-                        
+                        <td><input class="button" type="button" value="Hex" title="Convert to Hexadecimal" onclick="binaryToHexadecimal()"></td>
                     </tr>
                 </table>
             </div>
                 <table>
                     <tr>
-                        <td><input class="button" type="button" value="Dec" onclick="binaryToDecimal()"></td>
-                        <td><input class="button" type="button" value="ROR" onclick="circularShift('right')"></td>
-                        <td><input class="button" type="button" value="ROL" onclick="circularShift('left')"></td>
-                        <td><input class="button" type="button" value="NOT" onclick="bitwiseNOT()"></td>
-                        <td><input class="button" type="button" value="AND" onclick="bitwiseAND()"></td>
-                        <td><input class="button" type="button" value="OR" onclick="bitwiseOR()"></td>
-                        <td><input class="button" type="button" value="XOR" onclick="bitwiseXOR()"></td>
-                        
-                        
+                        <td><input class="button" type="button" value="Dec" title="Convert to Decimal" onclick="binaryToDecimal()"></td>
+                        <td><input class="button" type="button" value="ROR" title="Rotate Right" onclick="circularShift('right')"></td>
+                        <td><input class="button" type="button" value="ROL" title="Rotate Left" onclick="circularShift('left')"></td>
+                        <td><input class="button" type="button" value="NOT" title="Bitwise NOT" onclick="bitwiseNOT()"></td>
+                        <td><input class="button" type="button" value="AND" title="Bitwise AND" onclick="bitwiseAND()"></td>
+                        <td><input class="button" type="button" value="OR" title="Bitwise OR" onclick="bitwiseOR()"></td>
+                        <td><input class="button" type="button" value="XOR" title="Bitwise XOR" onclick="bitwiseXOR()"></td>
                     </tr>
                     <tr>
-                        <td><input class="button" type="button" value="Gray" onclick="binaryToGray()"></td>
-                        <td><input class="button" type="button" value="Float" onclick="binaryToFloat()"></td>
-                        <td><input class="button" type="button" value="Parity" onclick="calculateParityBit()"></td>
-                        <td><input class="button" type="button" value="Square" onclick="squareRootBinary()"></td>
-                        <td><input class="button" type="button" value="Fact" onclick="factorialBinary()"></td>
-                        
-                    </tr>
+                        <td><input class="button" type="button" value="Gray" title="Convert to Gray Code" onclick="binaryToGray()"></td>
+                        <td><input class="button" type="button" value="Float" title="Convert to Float" onclick="binaryToFloat()"></td>
+                        <td><input class="button" type="button" value="Parity" title="Calculate Parity Bit" onclick="calculateParityBit()"></td>
+                        <td><input class="button" type="button" value="Square" title="Square Root" onclick="squareRootBinary()"></td>
+                        <td><input class="button" type="button" value="Fact" title="Factorial" onclick="factorialBinary()"></td>
                     </tr>
                 </table>
             </div>
