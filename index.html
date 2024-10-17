@@ -6,6 +6,7 @@
     <title>Binary Calculator</title>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="shortcut icon" href="https://img.icons8.com/?size=100&id=80258&format=png&color=000000" type="image/x-icon">
 </head>
 <body>
     <div class="calculator-wrapper">
@@ -50,14 +51,17 @@
                         <td><input class="button" type="button" value=">>" title="Shift Right" onclick="insert('>')"></td>
                     </tr>
                     <tr>
-                        <td><input class="button" type="button" value="<<" title="Shift Left" onclick="insert('<')"></td>
-                        <td><input class="button" type="button" value="+" title="Add" onclick="insert('+')"></td>
-                        <td><input class="button" type="button" value="." title="Decimal" onclick="decimal()"></td>
-                        <td><input class="button" type="button" value="Octal" title="Convert to Octal" onclick="binaryToOctal()"></td>
-                        <td><input id="eql" class="button" type="button" value="=" title="Equal" onclick="eql()"></td>
-                        <td><div id="toggle-theme-button" class="theme-container shadow-dark" title="Toggle Theme">
+
+                        <td><input class="button" type="button" value="<<" onclick="insert('<')"></td>
+                        <td><input class="button" type="button" value="+" onclick="insert('+')"></td>
+                        <td><input class="button" type="button" value="." onclick="decimal()"></td>
+                        <td><input class="button" type="button" value="Octal" onclick="binaryToOctal()"></td>
+                        <td><input id="eql" class="button" type="button" value="=" onclick="eql()"></td>
+                        <td>
+                            <button type="button" id="toggle-theme-button" class="theme-container shadow-dark" onclick="switchTheme('theme2')" style="background-color: transparent; border: none; cursor: pointer;">
+
                                 <img width="50px" id="theme-icon" src="./images/moon.png" alt="ERR">
-                            </div>
+                            </button>
                         </td>
                         <td><input class="button" type="button" value="Hex" title="Convert to Hexadecimal" onclick="binaryToHexadecimal()"></td>
                     </tr>
