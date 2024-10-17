@@ -1,0 +1,263 @@
+/* Reset and General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f3f3f3;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Header Section */
+.header {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #f3e5f5;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  animation: fadeInDown 1s;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  background-color: #fff;
+  color: #6a11cb;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+  background-color: #f3e5f5;
+  transform: scale(1.05);
+}
+
+/* About Section */
+.about-section {
+  padding: 80px 10%;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  background-color: #f5f7fa;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin: 50px 0;
+}
+
+.about-text {
+  flex: 1;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #6a11cb;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Simple Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* How It Works Section */
+.how-it-works-section {
+  background-color: #fafafa;
+  padding: 60px 10%;
+  text-align: center;
+}
+
+.how-it-works-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.step {
+  width: 30%;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-10px);
+}
+
+.step i {
+  font-size: 3rem;
+  color: #6a11cb;
+  margin-bottom: 10px;
+}
+
+/* Features Section */
+.features-section {
+  padding: 80px 10%;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  text-align: center;
+}
+
+.features-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.feature {
+  width: 30%;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: scale(1.05);
+}
+
+.feature i {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+/* Call to Action Section */
+.cta-section {
+  padding: 60px 10%;
+  background: linear-gradient(135deg, #6dd5ed 0%, #2193b0 100%);
+  color: white;
+  text-align: center;
+}
+
+.cta-section a {
+  margin-top: 20px;
+  display: inline-block;
+  background-color: white;
+  color: #2193b0;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.cta-section a:hover {
+  background-color: #e3f2fd;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
