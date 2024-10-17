@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" class="root">
+    <link rel="icon" href="binary-code.png" type="image/x-icon">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Calculator</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="shortcut icon" href="https://img.icons8.com/?size=100&id=80258&format=png&color=000000" type="image/x-icon">
+</head>
+<body>
+    <div class="calculator-wrapper">
+        <div class="calculator-content">
+            <header class="title">
+                <div><span>Binary</span></div>
+                <div><span>Calculator</span></div>
+            </header>
+            <section class="calculator-body">
+                <form name="form">
+                    <div class="textview_container">
+                        <input id="res" type="text" class="textview" name="textview">
+                        <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <div>
+                                    <p id="modalResult"></p>
+                                </div>
+                                <div><span class="close" onclick="closeModal()">&times;</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+        <div class="calculator-container">
+            <div class="basic-options">
+                <table>
+                    <tr>
+                        <td><input class="button" type="button" value="M+" title="Memory Add" onclick="addToMemory()"></td>
+                        <td><input class="button" type="button" value="C" title="Clear" onclick="clc()"></td>
+                        <td><input class="button" type="button" value="⌫" title="Backspace" onclick="backspace()"></td>
+                        <td><input class="button" type="button" value="/" title="Divide" onclick="insert('/')"></td>
+                        <td><input class="button" type="button" value="M-" title="Memory Subtract" onclick="subtractFromMemory()"></td>
+                        <td><input class="button" type="button" value="0" title="Zero" onclick="insert(0)"></td>
+                        <td><input class="button" type="button" value="1" title="One" onclick="insert(1)"></td>
+                    </tr>
+                    <tr>
+                        <td><input class="button" type="button" value="*" title="Multiply" onclick="insert('*')"></td>
+                        <td><input class="button" type="button" value="MR" title="Memory Recall" onclick="recallMemory()"></td>
+                        <td><input class="button" type="button" value="1's" title="1's Complement" onclick="oneComplement()"></td>
+                        <td><input class="button" type="button" value="2's" title="2's Complement" onclick="twoComplement()"></td>
+                        <td><input class="button" type="button" value="-" title="Subtract" onclick="insert('-')"></td>
+                        <td><input class="button" type="button" value="MC" title="Memory Clear" onclick="clearMemory()"></td>
+                        <td><input class="button" type="button" value=">>" title="Shift Right" onclick="insert('>')"></td>
+                    </tr>
+                    <tr>
+
+                        <td><input class="button" type="button" value="<<" onclick="insert('<')"></td>
+                        <td><input class="button" type="button" value="+" onclick="insert('+')"></td>
+                        <td><input class="button" type="button" value="." onclick="decimal()"></td>
+                        <td><input class="button" type="button" value="Octal" onclick="binaryToOctal()"></td>
+                        <td><input id="eql" class="button" type="button" value="=" onclick="eql()"></td>
+                        <td>
+                            <button type="button" id="toggle-theme-button" class="theme-container shadow-dark" onclick="switchTheme('theme2')" style="background-color: transparent; border: none; cursor: pointer;">
+
+                                <img width="50px" id="theme-icon" src="./images/moon.png" alt="ERR">
+                            </button>
+                        </td>
+                        <td><input class="button" type="button" value="Hex" title="Convert to Hexadecimal" onclick="binaryToHexadecimal()"></td>
+                    </tr>
+                </table>
+            </div>
+                <table>
+                    <tr>
+                        <td><input class="button" type="button" value="Dec" title="Convert to Decimal" onclick="binaryToDecimal()"></td>
+                        <td><input class="button" type="button" value="ROR" title="Rotate Right" onclick="circularShift('right')"></td>
+                        <td><input class="button" type="button" value="ROL" title="Rotate Left" onclick="circularShift('left')"></td>
+                        <td><input class="button" type="button" value="NOT" title="Bitwise NOT" onclick="bitwiseNOT()"></td>
+                        <td><input class="button" type="button" value="AND" title="Bitwise AND" onclick="bitwiseAND()"></td>
+                        <td><input class="button" type="button" value="OR" title="Bitwise OR" onclick="bitwiseOR()"></td>
+                        <td><input class="button" type="button" value="XOR" title="Bitwise XOR" onclick="bitwiseXOR()"></td>
+                    </tr>
+                    <tr>
+                        <td><input class="button" type="button" value="Gray" title="Convert to Gray Code" onclick="binaryToGray()"></td>
+                        <td><input class="button" type="button" value="Float" title="Convert to Float" onclick="binaryToFloat()"></td>
+                        <td><input class="button" type="button" value="Parity" title="Calculate Parity Bit" onclick="calculateParityBit()"></td>
+                        <td><input class="button" type="button" value="Square" title="Square Root" onclick="squareRootBinary()"></td>
+                        <td><input class="button" type="button" value="Fact" title="Factorial" onclick="factorialBinary()"></td>
+                        <td><input class="button" type="button" value="," title="Comma" onclick="insert(',')"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <p id="modalResult"></p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="madewith">
+            <span>Made with</span>
+            <span class="heart">❤</span>
+        </div>
+        <div class="theme-buttons">
+            <button type="button" id="theme-button" class="theme_button magic" onclick="switchTheme('root')">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </button>
+            <button type="button" id="theme-button" class="theme_button covid" onclick="switchTheme('theme1')">
+                <i class="fa-solid fa-virus-covid"></i>
+            </button>
+            <button type="button" id="theme-button" class="theme_button meta" onclick="switchTheme('theme2')">
+                <i class="fa-brands fa-meta"></i>
+            </button>
+        </div>
+        <div class="socialcontainer">
+            <a class="insta" href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a class="face" href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a class="x" href="https://x.com/i/flow/login" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            <a class="linkedin" href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a class="github" href="https://github.com/Alitindrawan24" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <div class="copyright">
+            <span>© 2024 Binary Calculator. All rights reserved.</span>
+        </div>
+    </footer>
+    <script src="js/binaryCalculator.js"></script>
+    <script src="js/themeSwitcher.js"></script>
+</body>
+</html>
