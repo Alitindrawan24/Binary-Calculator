@@ -1,27 +1,26 @@
 // themeSwitcheroo
-function switchTheme(theme) {
-  // Logic to switch themes
+function switchTheme() {
   const currentTheme = document.documentElement.getAttribute("class");
-  if (currentTheme !== theme) {
-    document.documentElement.setAttribute("class", theme);
+
+  // Check which theme is currently applied and toggle
+  if (currentTheme === "theme1") {
+    document.documentElement.setAttribute("class", "theme2");  // Switch to dark theme
+    document.getElementById("theme-icon").src = "images/moon.png";  // Update icon to sun
+  } else {
+    document.documentElement.setAttribute("class", "theme1");  // Switch to light theme
+    document.getElementById("theme-icon").src = "images/moon.png"; // Update icon to moon
   }
 }
 
 // Ensure the function is called after the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function () {
-  switchTheme("theme1"); // Apply theme1
-  // You can add event listeners for buttons here to switch themes
-  const themeButton1 = document.getElementById("theme-button-1");
-  const themeButton2 = document.getElementById("theme-button-2");
+  // Set default theme
+  const defaultTheme = "theme1";  // Light theme as default
+  document.documentElement.setAttribute("class", defaultTheme);  // Apply default theme
 
-  if (themeButton1) {
-    themeButton1.onclick = () => switchTheme("root");
+  // Attach event listener to the theme toggle button
+  const themeToggleButton = document.getElementById("toggle-theme-button");
+  if (themeToggleButton) {
+    themeToggleButton.onclick = switchTheme;  // Toggle theme on button click
   }
-  if (themeButton2) {
-    themeButton2.onclick = () => switchTheme("theme1");
-  }
-
-  // Add a default theme switch if no button is clicked
-  const defaultTheme = "theme1"; // Set your default theme here
-  switchTheme(defaultTheme); // Ensure the default theme is applied
 });
