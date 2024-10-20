@@ -1,107 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="root">
+    <link rel="icon" href="binary-code.png" type="image/x-icon">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Binary Calculator - Simplified</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Calculator</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="shortcut icon" href="https://img.icons8.com/?size=100&id=80258&format=png&color=000000" type="image/x-icon">
 </head>
 <body>
-  <!-- Header Section -->
-  <header class="header">
-    <nav class="navbar">
-      <div class="logo">BinaryCalc</div>
-      <ul class="nav-links">
-        <li><a href="#about">What is Binary?</a></li>
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#calculator">Calculator</a></li>
-      </ul>
-    </nav>
-    <div class="hero">
-      <h1>Understand & Calculate Binary with Ease!</h1>
-      <p>Binary arithmetic simplified for everyone. Learn and compute effortlessly!</p>
-      <a href="#calculator" class="cta-button">Try the Calculator Now</a>
+    <header class="header" style="
+        background-color: #1a1a1a;
+        padding: 20px;
+        border-bottom: 3px solid #4caf50;
+        ">
+        <nav style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            ">
+        <!-- Left: Calculator Title -->
+            <div style="
+                font-size: 28px;
+                font-weight: bold;
+                color: #fff;
+                display: flex;
+                align-items: center;
+            ">
+                <span style="margin-right: 10px;">🧮</span> 
+                Binary Calculator
+            </div>
+
+        <!-- Right: Navigation Link -->
+            <div>
+                <a href="info.html" target="_blank" style="
+                    text-decoration: none;
+                    font-weight: bold;
+                    font-size: 18px;
+                    color: #4caf50;
+                    border: 2px solid #4caf50;
+                    padding: 8px 16px;
+                    border-radius: 25px;
+                    transition: background-color 0.3s, color 0.3s;
+                    " 
+                    onmouseover="this.style.backgroundColor='#4caf50'; this.style.color='#fff';"
+                    onmouseout="this.style.backgroundColor='transparent'; this.style.color='#4caf50';">
+                    Learn Binary
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="calculator-wrapper">
+        <div class="calculator-content">
+            <header class="title">
+                <div><span>Binary</span></div>
+                <div><span>Calculator</span></div>
+            </header>
+            <section class="calculator-body">
+                <form name="form">
+                    <div class="textview_container">
+                        <input id="res" type="text" class="textview" name="textview">
+                        <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <div>
+                                    <p id="modalResult"></p>
+                                </div>
+                                <div><span class="close" onclick="closeModal()">&times;</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+        <div class="calculator-container">
+            <div class="basic-options">
+                <table>
+                    <tr>
+                        <td><input class="button" type="button" value="M+" title="Memory Add" onclick="addToMemory()"></td>
+                        <td><input class="button" type="button" value="C" title="Clear" onclick="clc()"></td>
+                        <td><input class="button" type="button" value="⌫" title="Backspace" onclick="backspace()"></td>
+                        <td><input class="button" type="button" value="/" title="Divide" onclick="insert('/')"></td>
+                        <td><input class="button" type="button" value="M-" title="Memory Subtract" onclick="subtractFromMemory()"></td>
+                        <td><input class="button" type="button" value="0" title="Zero" onclick="insert(0)"></td>
+                        <td><input class="button" type="button" value="1" title="One" onclick="insert(1)"></td>
+                    </tr>
+                    <tr>
+                        <td><input class="button" type="button" value="*" title="Multiply" onclick="insert('*')"></td>
+                        <td><input class="button" type="button" value="MR" title="Memory Recall" onclick="recallMemory()"></td>
+                        <td><input class="button" type="button" value="1's" title="1's Complement" onclick="oneComplement()"></td>
+                        <td><input class="button" type="button" value="2's" title="2's Complement" onclick="twoComplement()"></td>
+                        <td><input class="button" type="button" value="-" title="Subtract" onclick="insert('-')"></td>
+                        <td><input class="button" type="button" value="MC" title="Memory Clear" onclick="clearMemory()"></td>
+                        <td><input class="button" type="button" value=">>" title="Shift Right" onclick="insert('>')"></td>
+                    </tr>
+                    <tr>
+
+                        <td><input class="button" type="button" value="<<" onclick="insert('<')"></td>
+                        <td><input class="button" type="button" value="+" onclick="insert('+')"></td>
+                        <td><input class="button" type="button" value="." onclick="decimal()"></td>
+                        <td><input class="button" type="button" value="Octal" onclick="binaryToOctal()"></td>
+                        <td><input id="eql" class="button" type="button" value="=" onclick="eql()"></td>
+                        <td>
+                            <button type="button" id="toggle-theme-button" class="theme-container shadow-dark" onclick="switchTheme('theme2')" style="background-color: transparent; border: none; cursor: pointer;">
+
+                                <img width="50px" id="theme-icon" src="./images/moon.png" alt="ERR">
+                            </button>
+                        </td>
+                        <td><input class="button" type="button" value="Hex" title="Convert to Hexadecimal" onclick="binaryToHexadecimal()"></td>
+                    </tr>
+                </table>
+            </div>
+                <table>
+                    <tr>
+                        <td><input class="button" type="button" value="Dec" title="Convert to Decimal" onclick="binaryToDecimal()"></td>
+                        <td><input class="button" type="button" value="ROR" title="Rotate Right" onclick="circularShift('right')"></td>
+                        <td><input class="button" type="button" value="ROL" title="Rotate Left" onclick="circularShift('left')"></td>
+                        <td><input class="button" type="button" value="NOT" title="Bitwise NOT" onclick="bitwiseNOT()"></td>
+                        <td><input class="button" type="button" value="AND" title="Bitwise AND" onclick="bitwiseAND()"></td>
+                        <td><input class="button" type="button" value="OR" title="Bitwise OR" onclick="bitwiseOR()"></td>
+                        <td><input class="button" type="button" value="XOR" title="Bitwise XOR" onclick="bitwiseXOR()"></td>
+                    </tr>
+                    <tr>
+                        <td><input class="button" type="button" value="Gray" title="Convert to Gray Code" onclick="binaryToGray()"></td>
+                        <td><input class="button" type="button" value="Float" title="Convert to Float" onclick="binaryToFloat()"></td>
+                        <td><input class="button" type="button" value="Parity" title="Calculate Parity Bit" onclick="calculateParityBit()"></td>
+                        <td><input class="button" type="button" value="Square" title="Square Root" onclick="squareRootBinary()"></td>
+                        <td><input class="button" type="button" value="Fact" title="Factorial" onclick="factorialBinary()"></td>
+                        <td><input class="button" type="button" value="," title="Comma" onclick="insert(',')"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <p id="modalResult"></p>
+            </div>
+        </div>
     </div>
-  </header>
-
-  <!-- About Binary Section -->
- <section id="about" class="about-section">
-  <div class="about-container">
-    <div class="about-text">
-      <h2>Understanding Binary Made Simple</h2>
-      <p>
-        Computers think in a language made of just two numbers: <strong>0</strong> and <strong>1</strong>. 
-        This system is called <strong>binary</strong>. Each 0 or 1 is like a tiny switch—off (0) or on (1). 
-        By combining these switches, computers can store and process everything from pictures to text!
-      </p>
-      <p>
-        Imagine a series of light switches. When arranged in the right way, these switches create complex results. 
-        In the same way, computers use sequences of 0s and 1s to represent and manage all the information we see and use.
-      </p>
-      <p>
-        Don’t worry if it sounds complicated—binary is just the computer’s way of counting. 
-        You don't need to understand every detail to use it, but it's amazing how much can be achieved with just 0s and 1s!
-      </p>
-    </div>
-</section>
-
-
-  <!-- How It Works Section -->
-  <section id="how-it-works" class="how-it-works-section">
-    <h2>How Binary Arithmetic Works</h2>
-    <div class="how-it-works-container">
-      <div class="step">
-        <i class="fas fa-keyboard"></i>
-        <h3>1. Input Binary Numbers</h3>
-        <p>Enter two numbers using only 0s and 1s.</p>
-      </div>
-      <div class="step">
-        <i class="fas fa-calculator"></i>
-        <h3>2. Choose the Operation</h3>
-        <p>Select what you want to do: add, subtract, multiply, or divide.</p>
-      </div>
-      <div class="step">
-        <i class="fas fa-check-circle"></i>
-        <h3>3. Get the Result</h3>
-        <p>Your answer will be displayed instantly in binary format.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section id="features" class="features-section">
-    <h2>Features of Our Calculator</h2>
-    <div class="features-container">
-      <div class="feature">
-        <i class="fas fa-clock"></i>
-        <h3>Instant Results</h3>
-        <p>No more waiting! Get your binary answers immediately.</p>
-      </div>
-      <div class="feature">
-        <i class="fas fa-user-friends"></i>
-        <h3>Beginner Friendly</h3>
-        <p>Designed for non-technical users to understand with ease.</p>
-      </div>
-      <div class="feature">
-        <i class="fas fa-mobile-alt"></i>
-        <h3>Mobile Responsive</h3>
-        <p>Works smoothly on any device—desktop, tablet, or smartphone.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Call to Calculator Section -->
-  <section id="calculator" class="cta-section">
-    <h2>Start Using the Calculator Now!</h2>
-    <p>Ready to play with binary? Click the button below to launch the calculator.</p>
-    <a href="calculator.html" class="cta-button">Go to Calculator</a>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2024 BinaryCalc | <a href="mailto:info@binarycalc.com">Contact Us</a></p>
-  </footer>
+    <footer>
+        <div class="madewith">
+            <span>Made with</span>
+            <span class="heart">❤</span>
+        </div>
+        <div class="theme-buttons">
+            <button type="button" id="theme-button" class="theme_button magic" onclick="switchTheme('root')">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </button>
+            <button type="button" id="theme-button" class="theme_button covid" onclick="switchTheme('theme1')">
+                <i class="fa-solid fa-virus-covid"></i>
+            </button>
+            <button type="button" id="theme-button" class="theme_button meta" onclick="switchTheme('theme2')">
+                <i class="fa-brands fa-meta"></i>
+            </button>
+        </div>
+        <div class="socialcontainer">
+            <a class="insta" href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a class="face" href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a class="x" href="https://x.com/i/flow/login" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            <a class="linkedin" href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a class="github" href="https://github.com/Alitindrawan24" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <div class="copyright">
+            <span>© 2024 Binary Calculator. All rights reserved.</span>
+        </div>
+    </footer>
+    <script src="js/binaryCalculator.js"></script>
+    <script src="js/themeSwitcher.js"></script>
 </body>
 </html>
