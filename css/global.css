@@ -24,12 +24,14 @@ body {
     min-width: 100%;
     margin: 0;
     padding: 0;
-    animation: changeBackground 10s linear infinite;
+    animation: changeBackground 20s linear infinite;
 }
 
 header {
-    margin: 0.5rem; /* Further reduced margin for header */
-    min-width: 240px; /* Adjusted min-width for header */
+    margin: 0.5rem;
+    /* Further reduced margin for header */
+    min-width: 240px;
+    /* Adjusted min-width for header */
 }
 
 footer {
@@ -38,7 +40,8 @@ footer {
     width: 100%;
     justify-content: center;
     align-items: center;
-    margin: 0.5rem; /* Further reduced margin for footer */
+    margin: 0.5rem;
+    /* Further reduced margin for footer */
 }
 
 @keyframes changeBackground {
@@ -92,81 +95,132 @@ footer {
 
 .title {
     width: 100%;
-    letter-spacing: 0.5ch;
     color: var(--title-color);
     text-align: center;
-    font-size: 2.5rem; /* Reduced font size */
-    text-shadow: 0 0 5px,
+    font-size: 3.5rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Slightly increased font size for better visibility */
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0 0 1px var(--title-shadow-color),
         0 0 10px var(--title-shadow-color),
         0 0 20px var(--title-shadow-color),
         0 0 40px var(--title-shadow-color),
         0 0 80px var(--title-shadow-color),
         0 0 100px var(--title-shadow-color),
         0 0 120px var(--title-shadow-color);
-    animation: blink 3s infinite linear alternate;
     cursor: pointer;
+    transition: transform 0.1s ease, color 0.1s ease;
 }
 
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px var(--title-shadow-color),
+            0 0 20px var(--title-shadow-color),
+            0 0 30px var(--title-shadow-color),
+            0 0 40px var(--title-shadow-color),
+            0 0 70px var(--title-shadow-color),
+            0 0 80px var(--title-shadow-color);
+    }
+
+    100% {
+        text-shadow: 0 0 20px var(--title-shadow-color),
+            0 0 30px var(--title-shadow-color),
+            0 0 40px var(--title-shadow-color),
+            0 0 50px var(--title-shadow-color),
+            0 0 90px var(--title-shadow-color),
+            0 0 100px var(--title-shadow-color);
+    }
+}
+
+
+.title:hover {
+    transform: scale(1.01);
+    color: var(--hover-color);
+}
+
+
 @keyframes blink {
-    60%, 70%, 79% {
+
+    60%,
+    70%,
+    79% {
         opacity: 1;
     }
 
-    65%, 67%, 76%, 78% {
+    65%,
+    67%,
+    76%,
+    78% {
         opacity: .2;
     }
 
-    66%, 69%, 77% {
+    66%,
+    69%,
+    77% {
         opacity: .08;
     }
 }
 
 .button-container {
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: center; 
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 65px; /* Further reduced button size */
-    height: 60px; /* Further reduced button height */
-    font-size: 18px; /* Reduced font size for buttons */
-    margin: 5px; /* Reduced margin between buttons */
+    width: 65px;
+    /* Further reduced button size */
+    height: 60px;
+    /* Further reduced button height */
+    font-size: 18px;
+    /* Reduced font size for buttons */
+    margin: 5px;
+    /* Reduced margin between buttons */
     cursor: pointer;
     border-radius: 15px;
     border: none;
     color: var(--button-text-color);
     background-color: var(--button-bg-color);
-    transition-duration: 0.4s;
-    flex: 1 1 48%; /* Flex items to take up about 45% of the width */
+    /* transition-duration: 0.4s; */
+    flex: 1 1 48%;
+    /* Flex items to take up about 45% of the width */
 }
 
 .button:hover {
     box-shadow: 0 0px 20px var(--button-hover-shadow-color);
     background: var(--button-hover-bg-color);
+    color: black;
 }
 
 .textview_container {
+    margin-top: 30px;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
     justify-content: center;
     align-items: center;
-    margin-bottom: 0.5rem; /* Reduced bottom margin */
+    margin-bottom: 0.5rem;
+    /* Reduced bottom margin */
 }
 
 .textview {
     display: flex;
     align-items: center;
     justify-items: center;
-    width: 97%; 
-    height: 35px; /* Reduced height */
-    margin-bottom: 0.5rem; /* Reduced margin */
-    font-size: 1.4rem; /* Decreased font size */
-    padding: 6px; /* Reduced padding */
+    width: 97%;
+    height: 35px;
+    /* Reduced height */
+    margin-bottom: 0.5rem;
+    /* Reduced margin */
+    font-size: 1.4rem;
+    /* Decreased font size */
+    padding: 6px;
+    /* Reduced padding */
     border: none;
     border-radius: 15px;
     background-color: var(--textview-bg-color);
@@ -174,9 +228,12 @@ footer {
 
 .input-container {
     position: relative;
-    width: 80%; /* Adjusted width to make it bigger */
-    height: 50px; /* Adjusted height to make it bigger */
-    padding: 10px; /* Increased padding for better spacing */
+    width: 80%;
+    /* Adjusted width to make it bigger */
+    height: 50px;
+    /* Adjusted height to make it bigger */
+    padding: 10px;
+    /* Increased padding for better spacing */
 }
 
 .modal {
@@ -198,10 +255,12 @@ footer {
     border-radius: 15px;
     background-color: var(--modal-content-box-bg-color);
     width: 90%;  */
-    /* height: 35px;  */ /* Reduced height */
+    /* height: 35px;  */
+    /* Reduced height */
     /* z-index: 1;
     left: 8rem; */
-    /* top: 12rem;  */ /* Adjusted for better placement */
+    /* top: 12rem;  */
+    /* Adjusted for better placement */
 
     display: flex;
     justify-content: center;
@@ -230,13 +289,17 @@ footer {
     cursor: pointer;
     inset: 0; */
 
-    position: absolute; /* Allow absolute positioning inside modal-content */
-    /* top: 0; */ /* Aligns the button at the top */
-    /* right: 0;  */ /* Aligns the button at the right */
+    position: absolute;
+    /* Allow absolute positioning inside modal-content */
+    /* top: 0; */
+    /* Aligns the button at the top */
+    /* right: 0;  */
+    /* Aligns the button at the right */
     color: var(--modal-close-color);
     margin-left: 130px;
     margin-top: -20px;
-    font-size: 1.5rem; /* Reduced font size */
+    font-size: 1.5rem;
+    /* Reduced font size */
     font-weight: bold;
     cursor: pointer;
     padding: 0.5rem;
@@ -248,11 +311,13 @@ footer {
 }
 
 .theme_button {
-    padding: 10px; /* Reduced padding */
+    padding: 10px;
+    /* Reduced padding */
     border: 2px solid var(--social-outline-color);
     border-radius: 10px;
     color: var(--social-logo-color);
     background-color: transparent;
+    cursor: pointer;
 }
 
 .theme_button:hover {
@@ -281,14 +346,16 @@ footer {
     text-align: right;
     font-family: var(--font-family-title);
     font-style: oblique;
-    font-size: medium; /* Reduced footer font size */
+    font-size: medium;
+    /* Reduced footer font size */
     justify-items: center;
     align-items: center;
     color: var(--heart-color);
 }
 
 .heart {
-    font-size: 18px; /* Reduced heart size */
+    font-size: 18px;
+    /* Reduced heart size */
     color: var(--heart-color);
     display: inline-block;
     text-align: center;
@@ -319,8 +386,10 @@ footer {
 .socialcontainer a {
     margin: 1px 5px;
     color: var(--social-logo-color);
-    font-size: 10px; /* Reduced size of social media icons */
-    padding: 5px; /* Reduced padding */
+    font-size: 10px;
+    /* Reduced size of social media icons */
+    padding: 5px;
+    /* Reduced padding */
     border: 2px solid var(--social-outline-color);
     border-radius: 8px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
@@ -358,19 +427,24 @@ footer {
 /* Media Queries */
 @media (max-width: 600px) {
     .textview {
-        font-size: 1.2rem; /* Smaller font size on small screens */
+        font-size: 1.2rem;
+        /* Smaller font size on small screens */
     }
 
     .button {
-        width: 50px; /* Further reduce button size */
-        height: 50px; /* Further reduce button height */
+        width: 50px;
+        /* Further reduce button size */
+        height: 50px;
+        /* Further reduce button height */
     }
 
     header {
-        font-size: 2rem; /* Smaller title font size */
+        font-size: 2rem;
+        /* Smaller title font size */
     }
 
     .madewith {
-        font-size: small; /* Smaller text size for footer */
+        font-size: small;
+        /* Smaller text size for footer */
     }
 }
