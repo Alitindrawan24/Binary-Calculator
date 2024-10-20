@@ -188,30 +188,58 @@ footer {
 }
 
 .modal-content {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; */
+    /* position: relative; */
+    /* padding: 0.5rem;
+    border: 1px solid var(--modal-border-color);
+    border-radius: 15px;
+    background-color: var(--modal-content-box-bg-color);
+    width: 90%;  */
+    /* height: 35px;  */ /* Reduced height */
+    /* z-index: 1;
+    left: 8rem; */
+    /* top: 12rem;  */ /* Adjusted for better placement */
+
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     padding: 0.5rem;
     border: 1px solid var(--modal-border-color);
     border-radius: 15px;
     background-color: var(--modal-content-box-bg-color);
-    width: 90%; 
-    height: 35px; /* Reduced height */
+    width: 96%;
+    height: 35px;
     z-index: 1;
     left: 8rem;
-    top: 12rem; /* Adjusted for better placement */
+    top: 12rem;
 }
 
 .close {
-    position: relative;
-    top: 0;
+    /* position: absolute;
+    top: 0; 
     right: 0;
     color: var(--modal-close-color);
-    float: right;
+    float: right; */
+    /* font-size: 1.5rem;  */
+    /* Reduced font size */
+    /* font-weight: bold;
+    cursor: pointer;
+    inset: 0; */
+
+    position: absolute; /* Allow absolute positioning inside modal-content */
+    /* top: 0; */ /* Aligns the button at the top */
+    /* right: 0;  */ /* Aligns the button at the right */
+    color: var(--modal-close-color);
+    margin-left: 130px;
+    margin-top: -20px;
     font-size: 1.5rem; /* Reduced font size */
     font-weight: bold;
     cursor: pointer;
-    inset: 0;
+    padding: 0.5rem;
 }
 
 .close:hover,
