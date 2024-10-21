@@ -4,16 +4,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  html, body {
+}
+
+html,
+body {
     height: 100%;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-  }
-  
-  .bg {
+}
+
+.bg {
     background: linear-gradient(135deg, #e91e63, #3151b5, #00c9ff, #92fe9d);
     background-size: 300% 300%;
     width: 100%;
@@ -24,6 +25,8 @@
     z-index: -1;
 }
 
+
+
 .title {
     margin-top: 25%;
 }
@@ -33,15 +36,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 0; /* Adjusted from a larger value to reduce space */
-    padding-top: 0; /* Ensure padding isn't pushing the content down */
+    margin-top: 0;
+    /* Adjusted from a larger value to reduce space */
+    padding-top: 0;
+    /* Ensure padding isn't pushing the content down */
     min-height: 100vh;
-    position: relative; /* Change from absolute if previously set so */
+    position: relative;
+    /* Change from absolute if previously set so */
     animation: gradientShift 15s ease infinite, floating 10s ease-in-out infinite;
     overflow: hidden;
-  }
-  
-  .stars {
+}
+
+.stars {
     position: absolute;
     top: 0;
     left: 0;
@@ -54,51 +60,65 @@
     pointer-events: none;
     z-index: 0;
     animation: starMovement 50s linear infinite;
-  }
-  
-  @keyframes starMovement {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-2000px); }
-  }
-  
-  .star {
+}
+
+@keyframes starMovement {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-2000px);
+    }
+}
+
+.star {
     position: absolute;
     background-color: white;
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
     animation: starBlink 5s infinite ease-in-out alternate;
-  }
-  
-  @keyframes starBlink {
-    0% { opacity: 0.5; }
-    100% { opacity: 1; }
-  }
-  
-  @keyframes gradientShift {
+}
+
+@keyframes starBlink {
     0% {
-      background-position: 0% 50%;
+        opacity: 0.5;
     }
-    50% {
-      background-position: 100% 50%;
-    }
+
     100% {
-      background-position: 0% 50%;
+        opacity: 1;
     }
-  }
-  
-  @keyframes floating {
+}
+
+@keyframes gradientShift {
     0% {
-      transform: translateY(0);
+        background-position: 0% 50%;
     }
+
     50% {
-      transform: translateY(-10px);
+        background-position: 100% 50%;
     }
+
     100% {
-      transform: translateY(0);
+        background-position: 0% 50%;
     }
-  }
-  
-  .main {
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.main {
     display: flex;
     position: absolute;
     top: 50%;
@@ -108,9 +128,9 @@
     align-items: center;
     justify-content: center;
     z-index: 1;
-  }
-  
-  .title {
+}
+
+.title {
     font-family: 'Berlin Sans FB', sans-serif;
     font-style: oblique;
     color: white;
@@ -118,18 +138,19 @@
     margin-top: 5%;
     font-size: 4rem;
     animation: glowText 2s ease-in-out infinite alternate;
-  }
-  
-  @keyframes glowText {
+}
+
+@keyframes glowText {
     0% {
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
     }
+
     100% {
-      text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1);
+        text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1);
     }
-  }
-  
-  .button {
+}
+
+.button {
     width: 90px;
     height: 75px;
     font-size: 15px;
@@ -143,26 +164,28 @@
     transition-duration: 0.4s;
     animation: pulse 2s infinite;
     box-shadow: 0 0 15px rgba(0, 200, 255, 0.5);
-  }
-  
-  .button:hover {
+}
+
+.button:hover {
     background: rgb(88, 153, 184);
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 1);
-  }
-  
-  @keyframes pulse {
+}
+
+@keyframes pulse {
     0% {
-      transform: scale(1);
+        transform: scale(1);
     }
+
     50% {
-      transform: scale(1.05);
+        transform: scale(1.05);
     }
+
     100% {
-      transform: scale(1);
+        transform: scale(1);
     }
-  }
-  
-  .textview {
+}
+
+.textview {
     width: 100%;
     max-width: 305px;
     height: 50px;
@@ -173,15 +196,23 @@
     border-radius: 15px;
     background-color: #ffffff;
     animation: rippleEffect 15s infinite linear;
-  }
-  
-  @keyframes rippleEffect {
-    0% { background-color: #ffffff; }
-    50% { background-color: #f0f0f0; }
-    100% { background-color: #ffffff; }
-  }
-  
-  .name {
+}
+
+@keyframes rippleEffect {
+    0% {
+        background-color: #ffffff;
+    }
+
+    50% {
+        background-color: #f0f0f0;
+    }
+
+    100% {
+        background-color: #ffffff;
+    }
+}
+
+.name {
     padding: 20px;
     bottom: 0;
     right: 0;
@@ -228,9 +259,12 @@ table {
 
 .input-container {
     position: relative;
-    width: 80%; /* Adjusted width to make it bigger */
-    height: 50px; /* Adjusted height to make it bigger */
-    padding: 10px; /* Increased padding for better spacing */
+    width: 80%;
+    /* Adjusted width to make it bigger */
+    height: 50px;
+    /* Adjusted height to make it bigger */
+    padding: 10px;
+    /* Increased padding for better spacing */
 }
 
 @keyframes blink {
@@ -301,6 +335,7 @@ table {
         0 17px 50px 0 rgba(0, 0, 0, 0.19);
     background: rgb(88, 153, 184);
     opacity: 0.8;
+
 }
 
 .heart {
@@ -468,12 +503,13 @@ Animating title
 
 .calculator-container {
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: center; 
-    align-items: flex-start; 
-    gap: 20px; 
-    max-width: 800px; 
-    margin: 0 auto; 
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+
 }
 
 .basic-options {
@@ -482,6 +518,7 @@ Animating title
     align-items: center;
     margin-bottom: 20px;
 }
+
 .toggle-button {
     margin-top: 20px;
     padding: 10px 20px;
