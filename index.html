@@ -11,6 +11,48 @@
     <link rel="shortcut icon" href="https://img.icons8.com/?size=100&id=80258&format=png&color=000000" type="image/x-icon">
 </head>
 <body>
+    <header class="header" style="
+        background-color: #1a1a1a;
+        padding: 20px;
+        border-bottom: 3px solid #4caf50;
+        ">
+        <nav style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            ">
+        <!-- Left: Calculator Title -->
+            <div style="
+                font-size: 28px;
+                font-weight: bold;
+                color: #fff;
+                display: flex;
+                align-items: center;
+            ">
+                <span style="margin-right: 10px;">🧮</span> 
+                Binary Calculator
+            </div>
+
+        <!-- Right: Navigation Link -->
+            <div>
+                <a href="info.html" target="_blank" style="
+                    text-decoration: none;
+                    font-weight: bold;
+                    font-size: 18px;
+                    color: #4caf50;
+                    border: 2px solid #4caf50;
+                    padding: 8px 16px;
+                    border-radius: 25px;
+                    transition: background-color 0.3s, color 0.3s;
+                    " 
+                    onmouseover="this.style.backgroundColor='#4caf50'; this.style.color='#fff';"
+                    onmouseout="this.style.backgroundColor='transparent'; this.style.color='#4caf50';">
+                    Learn Binary
+                </a>
+            </div>
+        </nav>
+    </header>
+
     <div class="calculator-wrapper">
         <div class="calculator-content">
             <header class="title">
