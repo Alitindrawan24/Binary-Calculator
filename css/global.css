@@ -323,7 +323,7 @@ footer {
     /* Adjusted for better placement */
 
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     text-align: center;
     padding: 0.5rem;
@@ -356,9 +356,9 @@ footer {
     /* right: 0;  */
     /* Aligns the button at the right */
     color: var(--modal-close-color);
-    margin-left: 130px;
-    margin-top: -20px;
-    font-size: 1.5rem;
+   margin-left: -15px;
+    margin-top: -28px;
+    font-size: 2rem;
     /* Reduced font size */
     font-weight: bold;
     cursor: pointer;
