@@ -31,8 +31,8 @@ html[class="theme1"] {
     --button-hover-shadow-color: #4c8ef8;
 
     /* textview */
-    --textview-bg-color: #fff;
-    --textview-color: #000000;
+    --textview-bg-color: rgba(134, 134, 134, 0.5);
+    --textview-color: white;
 
     /* modal */
     --modal-bg-color: transparent;

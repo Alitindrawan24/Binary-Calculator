@@ -32,7 +32,7 @@ html[class="theme2"] {
 
     /* textview */
     --textview-bg-color: #fff;
-    --textview-color: #000000;
+    --textview-color: black;
 
     /* modal */
     --modal-bg-color: transparent;
