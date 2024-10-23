@@ -139,7 +139,7 @@ footer {
         --button-hover-bg-color: #5899b8;
         --button-hover-shadow-color: #5899b8;
         --textview-bg-color: #fff;
-        --textview-color: #000000;
+        /* --textview-color: #000000; */
         --modal-bg-color: transparent;
         --modal-content-box-bg-color: #fff;
         --modal-text-color: #000;
@@ -274,6 +274,7 @@ footer {
     justify-items: center;
     width: 97%;
     height: 35px;
+   
     /* Reduced height */
     margin-bottom: 0.5rem;
     /* Reduced margin */
@@ -281,8 +282,9 @@ footer {
     /* Decreased font size */
     padding: 6px;
     /* Reduced padding */
-    border: none;
     border-radius: 15px;
+    border: 2px solid var(--button-bg-color);
+    color: var(--textview-color);
     background-color: var(--textview-bg-color);
 }
 
