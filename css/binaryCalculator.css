@@ -140,6 +140,9 @@ body {
     animation: glowText 2s ease-in-out infinite alternate;
 }
 
+
+
+
 @keyframes glowText {
     0% {
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
