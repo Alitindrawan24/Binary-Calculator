@@ -100,6 +100,15 @@
         </div>
     </div>
 
+    <div class="feedback-section">
+        <h2>Feedback</h2>
+        <form id="feedbackForm">
+            <textarea id="feedbackText" placeholder="Share your feedback here..." rows="4" required></textarea>
+            <button type="submit">Submit Feedback</button>
+        </form>
+        <p id="feedbackMessage" style="display:none; color: green; margin-top: 10px;">Thank you for your feedback!</p>
+    </div>  
+      
     <footer>
         <div class="madewith">
             <span>Made with</span>
@@ -120,5 +129,23 @@
     <script src="js/binaryCalculator.js"></script>
     <script src="js/themeSwitcher.js"></script>
     </div>  
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const feedbackForm = document.getElementById('feedbackForm');
+            
+            feedbackForm.addEventListener('submit', function (e) {
+                e.preventDefault();  // Prevent page refresh
+                
+                // Show thank you message
+                document.getElementById('feedbackMessage').style.display = 'block';
+                document.getElementById('feedbackText').value = '';  // Clear the textarea
+                
+                // Hide the message after 3 seconds
+                setTimeout(() => {
+                    document.getElementById('feedbackMessage').style.display = 'none';
+                }, 3000);
+            });
+        });
+    </script>
 </body>
 </html>
