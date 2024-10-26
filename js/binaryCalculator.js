@@ -486,7 +486,6 @@ function factorialBinary() {
   const message = `factorial of ${binary} is ${factorial}`;
   openModal(message);
 }
-
 function toggleAdvancedOptions() {
     const advancedOptions = document.getElementById('advancedOptions');
     const toggleButton = document.getElementById('toggleAdvanced');
