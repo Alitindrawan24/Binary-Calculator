@@ -1,0 +1,100 @@
+/* Dark Theme */
+[data-theme="dark"] {
+  /* RGB versions for opacity control (Dark Mode) */
+  --color-gray-400-rgb: 119, 124, 124;
+  --color-teal-300-rgb: 50, 184, 198;
+  --color-gray-300-rgb: 167, 169, 169;
+  --color-gray-200-rgb: 245, 245, 245;
+
+  /* Semantic Color Tokens (Dark Mode) */
+  --color-background: var(--color-navy-700);
+  --color-surface: var(--color-navy-800);
+  --color-text: var(--color-gray-200);
+  --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
+  --color-primary: var(--color-teal-300);
+  --color-primary-hover: var(--color-teal-400);
+  --color-primary-active: var(--color-teal-800);
+  --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
+  --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
+  --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
+  --color-border: rgba(var(--color-gray-400-rgb), 0.3);
+  --color-error: var(--color-red-400);
+  --color-success: var(--color-teal-300);
+  --color-warning: var(--color-orange-400);
+  --color-info: var(--color-gray-300);
+  --color-focus-ring: rgba(var(--color-teal-300-rgb), 0.4);
+  --color-btn-primary-text: var(--color-slate-900);
+  --color-card-border: rgba(var(--color-gray-400-rgb), 0.2);
+  --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
+  --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  --button-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
+  --color-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
+
+  /* Common style patterns - updated for dark mode */
+  --focus-ring: 0 0 0 3px var(--color-focus-ring);
+  --focus-outline: 2px solid var(--color-primary);
+  --status-bg-opacity: 0.15;
+  --status-border-opacity: 0.25;
+
+  /* RGB versions for dark mode */
+  --color-success-rgb: var(--color-teal-300-rgb);
+  --color-error-rgb: var(--color-red-400-rgb);
+  --color-warning-rgb: var(--color-orange-400-rgb);
+  --color-info-rgb: var(--color-gray-300-rgb);
+
+  /* Glassmorphism for dark mode */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --bg-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  --accent-subtle: rgba(255, 0, 128, 0.3);
+  --accent-cyan: rgba(0, 255, 255, 0.3);
+  --text-primary: var(--color-gray-200);
+  --text-secondary: rgba(167, 169, 169, 0.7);
+
+  /* Button gradients & colors - optimized for better readability */
+  --btn-digit-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.05));
+  --btn-digit-border: rgba(255, 255, 255, 0.15);
+  --btn-digit-hover: rgba(255, 255, 255, 0.12);
+  --btn-digit-text: var(--color-gray-200);
+
+  --btn-operator-bg: linear-gradient(135deg, rgba(34, 211, 238, 0.25), rgba(8, 145, 178, 0.25));
+  --btn-operator-border: rgba(34, 211, 238, 0.3);
+  --btn-operator-hover: linear-gradient(135deg, rgba(8, 145, 178, 0.35), rgba(14, 116, 144, 0.35));
+  --btn-operator-text: var(--color-gray-200);
+
+  --btn-memory-bg: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(217, 119, 6, 0.25));
+  --btn-memory-border: rgba(245, 158, 11, 0.3);
+  --btn-memory-hover: linear-gradient(135deg, rgba(217, 119, 6, 0.35), rgba(180, 83, 9, 0.35));
+  --btn-memory-text: var(--color-gray-200);
+
+  --btn-function-bg: linear-gradient(135deg, rgba(185, 28, 28, 0.25), rgba(127, 29, 29, 0.25));
+  --btn-function-border: rgba(185, 28, 28, 0.3);
+  --btn-function-hover: linear-gradient(135deg, rgba(153, 27, 27, 0.35), rgba(95, 26, 26, 0.35));
+  --btn-function-text: var(--color-gray-200);
+
+  --btn-bitwise-bg: linear-gradient(135deg, rgba(96, 165, 250, 0.25), rgba(37, 99, 235, 0.25));
+  --btn-bitwise-border: rgba(59, 130, 246, 0.3);
+  --btn-bitwise-hover: linear-gradient(135deg, rgba(59, 130, 246, 0.35), rgba(29, 78, 216, 0.35));
+  --btn-bitwise-text: var(--color-gray-200);
+
+  --btn-shift-bg: linear-gradient(135deg, rgba(52, 211, 153, 0.25), rgba(5, 150, 105, 0.25));
+  --btn-shift-border: rgba(16, 185, 129, 0.3);
+  --btn-shift-hover: linear-gradient(135deg, rgba(16, 185, 129, 0.35), rgba(4, 120, 87, 0.35));
+  --btn-shift-text: var(--color-gray-200);
+
+  --btn-complement-bg: linear-gradient(135deg, rgba(251, 146, 60, 0.25), rgba(234, 88, 12, 0.25));
+  --btn-complement-border: rgba(251, 146, 60, 0.3);
+  --btn-complement-hover: linear-gradient(135deg, rgba(249, 115, 22, 0.35), rgba(194, 65, 12, 0.35));
+  --btn-complement-text: var(--color-gray-200);
+
+  --btn-advanced-bg: linear-gradient(135deg, rgba(167, 139, 250, 0.25), rgba(124, 58, 237, 0.25));
+  --btn-advanced-border: rgba(139, 92, 246, 0.3);
+  --btn-advanced-hover: linear-gradient(135deg, rgba(139, 92, 246, 0.35), rgba(109, 40, 217, 0.35));
+  --btn-advanced-text: var(--color-gray-200);
+
+  --btn-equals-bg: linear-gradient(135deg, rgba(45, 212, 191, 0.3), rgba(13, 148, 136, 0.3));
+  --btn-equals-border: rgba(45, 212, 191, 0.35);
+  --btn-equals-text: var(--color-gray-200);
+}
