@@ -858,7 +858,7 @@ function setMode(mode) {
         advancedBtn.classList.add('active');
         basicBtn.classList.remove('active');
     }
-}
+} 
 
 // Event listeners for mode buttons
 basicBtn.addEventListener('click', () => setMode('Basic'));
