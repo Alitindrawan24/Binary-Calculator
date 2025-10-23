@@ -247,4 +247,6 @@ export class BinaryCalculations {
     // Remove any non-binary characters
     return str.replace(/[^01]/g, '');
   }
+  // JavaScript to handle toggle
+
 }
