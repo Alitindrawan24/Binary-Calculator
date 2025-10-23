@@ -820,3 +820,51 @@ document.addEventListener('DOMContentLoaded', () => {
   const calculator = new BinaryCalculator();
   window.calculator = calculator; // For debugging
 });
+
+const toggleHintBtn = document.getElementById('toggleHint');
+let hintEnabled = true;
+
+// Function to update the button text dynamically
+function updateHintButton() {
+    toggleHintBtn.textContent = `Keyboard Hint: ${hintEnabled ? 'ON' : 'OFF'}`;
+}
+
+// Toggle hint state when button is clicked
+toggleHintBtn.addEventListener('click', () => {
+    hintEnabled = !hintEnabled;
+    updateHintButton();
+});
+
+// Keyboard shortcut for 't'
+document.addEventListener('keydown', (event) => {
+    if (event.key.toLowerCase() === 't') {
+        hintEnabled = !hintEnabled;
+        updateHintButton();
+    }
+});
+
+// Optional: dynamically update tooltip
+toggleHintBtn.title = "Press 't' to toggle keyboard hints (works in Basic and Advanced)";
+
+// Mode switching logic for UI clarity
+const basicBtn = document.getElementById('basicMode');
+const advancedBtn = document.getElementById('advancedMode');
+
+function setMode(mode) {
+    if (mode === 'Basic') {
+        basicBtn.classList.add('active');
+        advancedBtn.classList.remove('active');
+    } else {
+        advancedBtn.classList.add('active');
+        basicBtn.classList.remove('active');
+    }
+}
+
+// Event listeners for mode buttons
+basicBtn.addEventListener('click', () => setMode('Basic'));
+advancedBtn.addEventListener('click', () => setMode('Advanced'));
+
+// Initial state
+updateHintButton();
+setMode('Basic');
+
